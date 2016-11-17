@@ -4,12 +4,12 @@ This is empty on purpose! Your code to build the resume will go here.
 
 var bio = {
     "name"  : "Tamer Labna",
-    "role" : "Software Engineer - Full Stack Software Engineer",
+    "role" : "Software Engineer - Full Stack Developer",
     "contacts" : {
         "mobile" : "514-690-1248",
         "email" : "tlabna@udacity.com",
         "github" : "@tlabna",
-        "location" : "Montreal"
+        "location" : "Montreal, QC"
     },
     "biopic" : "images/fry.jpg",
     "welcomeMessage" : "Welcome to my Resume!",
@@ -165,14 +165,14 @@ var work = {
         {
             "employer" : "FixMeStick Technologies",
             "title" : "Software Engineer",
-            "location" : "Montreal",
+            "location" : "Montreal, QC",
             "dates" : "2013 - 2016",
             "description" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus officia commodi molestias soluta incidunt hic non excepturi tempora sint repellendus illum, quas quam accusamus. Quos tenetur, deserunt magnam cum reprehenderit."
         },
         {
             "employer" : "McGill University",
             "title" : "Senior IT Consultant",
-            "location" : "Montreal",
+            "location" : "Montreal, QC",
             "dates" : "2011-2012",
             "description" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum neque praesentium perspiciatis veritatis exercitationem, deleniti obcaecati accusamus necessitatibus voluptatibus, assumenda sunt? Voluptatem accusamus minus ullam, illum deserunt numquam, quidem cum."
         }
