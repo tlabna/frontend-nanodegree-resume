@@ -187,10 +187,10 @@ var education = {
             $(".education-entry:last").append(formattedURL);
 
             if (currentSchool.majors.length > 0) {
-                currentSchool.majors.forEach(function(major) {
-                    var formattedMajor = HTMLschoolMajor.replace("%data%", major);
+                for (var major = 0; major < currentSchool.majors.length; major++) {
+                    var formattedMajor = HTMLschoolMajor.replace("%data%", currentSchool.majors[major]);
                     $(".education-entry:last").append(formattedMajor);
-                });
+                }
             }
         }
 
@@ -292,11 +292,11 @@ var projects = {
             $(".project-entry:last").append(formattedDescription);
 
             if (currentProject.images.length > 0) {
-                currentProject.images.forEach(function(image) {
-                    var formattedImage = HTMLprojectImage.replace("%data%", image);
+                for (var image = 0; image < currentProject.images.length; image++) {
+                    var formattedImage = HTMLprojectImage.replace("%data%", currentProject.images[image]);
 
                     $(".project-entry:last").append(formattedImage);
-                });
+                }
             }
         }
     }
