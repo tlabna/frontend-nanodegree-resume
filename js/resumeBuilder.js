@@ -340,10 +340,11 @@ $(document).ready(function() {
 });
 
 //Function to the css rule
-function checkSize(){
-    if ($(".topContactsBox").css("float") == "none" ){
-        console.log("Float=none do shit!")
-        $(".topContactsBox").parent().css({"text-align": "center"});
+function checkSize() {
+    if ($(".topContactsBox").css("float") == "none") {
+        $(".topContactsBox").parent().css({
+            "text-align": "center"
+        });
     }
     //Remove centering if window is resized back to a larger screen
     else if ($(".topContactsBox ul").css("float" == "right") && $(".topContactsBox").parent().css("text-align") == "center") {
