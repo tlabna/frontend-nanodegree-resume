@@ -328,3 +328,25 @@ function inName(name) {
 }
 
 $('#mapDiv').append(googleMap);
+
+// Handling media query for parent divs that can't be accessed through CSS
+
+$(document).ready(function() {
+    // run test on initial page load
+    checkSize();
+
+    // run test on resize of the window
+    $(window).resize(checkSize);
+});
+
+//Function to the css rule
+function checkSize(){
+    if ($(".topContactsBox").css("float") == "none" ){
+        console.log("Float=none do shit!")
+        $(".topContactsBox").parent().css({"text-align": "center"});
+    }
+    //Remove centering if window is resized back to a larger screen
+    else if ($(".topContactsBox ul").css("float" == "right") && $(".topContactsBox").parent().css("text-align") == "center") {
+        $(".topContactsBox").parent().css("text-align", "");
+    }
+}
