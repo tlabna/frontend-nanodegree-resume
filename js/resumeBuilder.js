@@ -1,7 +1,3 @@
-/*
-This is empty on purpose! Your code to build the resume will go here.
- */
-
 /* BIO */
 var bio = {
     "name": "Tamer Labna",
@@ -16,6 +12,7 @@ var bio = {
     "welcomeMessage": "Welcome to my Resume! Here you'll get to know a little about me and my past experiences. If you wish to get in conact with me, don't hesitate to get in touch.",
     "skills": ["HTML", "CSS", "JS", "AJAX", "Python", "MySQL", "Django"],
     "display": function() {
+        'use strict';
 
         // Formatting Name + Role + Welcome message
         var splitNames = bio.name.split(" ");
@@ -59,6 +56,18 @@ var bio = {
             $("#footerContacts").append(contactArray[i]);
         }
 
+        if (bio.skills.length > 0) {
+
+            bio.skills.forEach(function(skill) {
+
+                var formattedSkills = HTMLskills.replace("%data%", skill);
+                $("#skills").append(formattedSkills);
+            });
+
+        } else {
+            console.log("No skills....");
+        }
+
         // Formatting Bio Pic
         var formattedbioPic = HTMLbioPic.replace("%data%", bio.biopic);
         //$("#header").append(formattedbioPic);
@@ -68,18 +77,6 @@ var bio = {
 
 /* Creating a chart to display skills.
 Using chartjs library: http://www.chartjs.org/docs/#polar-area-chart */
-
-if (bio.skills.length > 0) {
-
-    bio.skills.forEach(function(skill) {
-
-        var formattedSkills = HTMLskills.replace("%data%", skill);
-        $("#skills").append(formattedSkills);
-    });
-
-} else {
-    console.log("No skills....");
-}
 
 var data = [{
     value: 10,
@@ -127,6 +124,8 @@ var data = [{
 
 // Display skill labels
 var skillsChartLabels = function() {
+    'use strict';
+
     for (var skill = 0; skill < data.length; skill++) {
         var skillLabel = data[skill].label;
         var skillHTML = '<span class="label" style="background-color: ' + data[skill].labelcolor + '">' + skillLabel + '</span>';
@@ -136,6 +135,8 @@ var skillsChartLabels = function() {
 
 // Call functions
 window.onload = function() {
+    'use strict';
+
     var ctx = document.getElementById("skills-chart").getContext("2d");
     window.myPolarAreaChart = new Chart(ctx).PolarArea(data, {
         responsive: false
@@ -169,6 +170,7 @@ var education = {
     }],
 
     "display": function() {
+        'use strict';
 
         for (var school = 0; school < education.schools.length; school++) {
             $("#education").append(HTMLschoolStart);
@@ -244,6 +246,8 @@ var work = {
     }],
 
     "display": function() {
+        'use strict';
+
         for (var job = 0; job < work.jobs.length; job++) {
             //create new div for work experience
             $("#workExperience").append(HTMLworkStart);
@@ -277,6 +281,8 @@ var projects = {
     }],
 
     "display": function() {
+        'use strict';
+
         for (var project = 0; project < projects.projects.length; project++) {
 
             $("#projects").append(HTMLprojectStart);
@@ -305,6 +311,8 @@ projects.display();
 
 //collecting click locations function
 $(document).click(function(loc) {
+    'use strict';
+
     // your code goes here
     var xCord = loc.pageX;
     var yCord = loc.pageY;
@@ -316,6 +324,7 @@ $(document).click(function(loc) {
 $("#main").append(internationalizeButton);
 
 function inName(name) {
+    'use strict';
 
     var splitName = name.split(" ");
 
@@ -332,6 +341,7 @@ $('#mapDiv').append(googleMap);
 // Handling media query for parent divs that can't be accessed through CSS
 
 $(document).ready(function() {
+    'use strict';
     // run test on initial page load
     checkSize();
 
@@ -341,6 +351,8 @@ $(document).ready(function() {
 
 //Function to the css rule
 function checkSize() {
+    'use strict';
+
     if ($(".topContactsBox").css("float") == "none") {
         $(".topContactsBox").parent().css({
             "text-align": "center"
