@@ -231,26 +231,26 @@ var work = {
         "employer": "FixMeStick Technologies",
         "title": "Software Engineer",
         "location": "Montreal, QC",
-        "dates": "2013 - 2016",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus officia commodi molestias soluta incidunt hic non excepturi tempora sint repellendus illum, quas quam accusamus. Quos tenetur, deserunt magnam cum reprehenderit."
+        "dates": "2013—2015",
+        "description": "Administered complete customer support system, including web development of customer platform as well as communicating with 1000s of customers over the phone, email and chat (in English and French). Designed responsive web apps to assist customers/employees in troubleshooting common problems and view scan history (retrieved from an AJAX request to backend API). These greatly reduce support requests. Supervised backend (built with Django), developed improvements as well as reported bugs on Bitbucket and deployed fixes. Created a script to re-image USBs and discovered a solution to enable Bluetooth compatibility for an early stage Mac product which was crucial to the success of the product launch. Coordinated and took initiative to bring 12 employees up to speed with using the product and how to efficiently resolve support tickets. I was their go-to person when problems could not be resolved.- Played a big part in the company’s success, caught 90% of product bugs early and improved upon. Customers/employers were extremely happy with my service and going out of my way attitude."
     }, {
         "employer": "McGill University",
         "title": "Senior IT Consultant",
         "location": "Montreal, QC",
-        "dates": "2011-2012",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum neque praesentium perspiciatis veritatis exercitationem, deleniti obcaecati accusamus necessitatibus voluptatibus, assumenda sunt? Voluptatem accusamus minus ullam, illum deserunt numquam, quidem cum."
+        "dates": "2012",
+        "description": "Educated professors and students how to use Information and Technology in order to meet their objectives and overcome problems. Interviewed and assessed multiple applicants for hiring. Trained and supervised junior IT consultants."
     }, {
         "employer": "McGill University",
         "title": "Junior IT Consultant",
         "location": "Montreal, QC",
         "dates": "2011",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius sit eos facilis quos nostrum totam accusantium, corrupti ipsam aspernatur est numquam minus possimus adipisci ad aperiam, maiores. Error, facilis, quam."
+        "description": "Assisted all faculty members of Desautels Faculty of Management in solving IT related issues. Ensured all hardware and software services are up to faculty standards. Promoted in 3 months due to excellent work."
     }, {
         "employer": "McGill University",
         "title": "Research Assistant",
         "location": "Montreal, QC",
-        "dates": "2011-2012",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint repellat aut, accusamus optio molestias sit ipsum, eveniet dolor. Beatae laudantium veniam modi ea, quibusdam repellendus dolor similique vitae culpa distinctio."
+        "dates": "2011",
+        "description": "Collaborated with a professor for research in implementing an integrated glucose control system to treat patients with diabetes. Collected data for research and used MATLAB to display data. Successfully aided in the advancement of the research study."
     }],
 
     "display": function() {
