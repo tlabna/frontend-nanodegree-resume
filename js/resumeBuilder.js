@@ -154,18 +154,19 @@ var education = {
         "degree": "B. Engineering",
         "dates": "2007-2012",
         "url": "https://www.mcgill.ca/",
-        "majors": ["Computer Engineering", "Management"]
+        "majors": ["Computer Engineering"],
+        "minors": ["Management"]
     }],
 
     "onlineCourses": [{
         "title": "Front-End Nanodegree",
         "school": "Udacity",
-        "dates": "2016",
+        "dates": "2016-2017",
         "url": "https://www.udacity.com"
     }, {
         "title": "Full-Stack Nanodegree",
         "school": "Udacity",
-        "dates": "2016",
+        "dates": "2016-2017",
         "url": "https://www.udacity.com/"
     }],
 
@@ -192,6 +193,13 @@ var education = {
                 for (var major = 0; major < currentSchool.majors.length; major++) {
                     var formattedMajor = HTMLschoolMajor.replace("%data%", currentSchool.majors[major]);
                     $(".education-entry:last").append(formattedMajor);
+                }
+            }
+
+            if (currentSchool.minors.length > 0) {
+                for (var minor = 0; minor < currentSchool.minors.length; minor++) {
+                    var formattedMinor = HTMLschoolMinor.replace("%data%", currentSchool.minors[minor]);
+                    $(".education-entry:last").append(formattedMinor);
                 }
             }
         }
