@@ -232,25 +232,42 @@ var work = {
         "title": "Software Engineer",
         "location": "Montreal, QC",
         "dates": "2013—2015",
-        "description": "Administered complete customer support system, including web development of customer platform as well as communicating with 1000s of customers over the phone, email and chat (in English and French). Designed responsive web apps to assist customers/employees in troubleshooting common problems and view scan history (retrieved from an AJAX request to backend API). These greatly reduce support requests. Supervised backend (built with Django), developed improvements as well as reported bugs on Bitbucket and deployed fixes. Created a script to re-image USBs and discovered a solution to enable Bluetooth compatibility for an early stage Mac product which was crucial to the success of the product launch. Coordinated and took initiative to bring 12 employees up to speed with using the product and how to efficiently resolve support tickets. I was their go-to person when problems could not be resolved.- Played a big part in the company’s success, caught 90% of product bugs early and improved upon. Customers/employers were extremely happy with my service and going out of my way attitude."
+        "description": [
+                        "Administered complete customer support system, including web development of customer platform as well as communicating with 1000s of customers over the phone, email and chat (in English and French).",
+                        "Designed responsive web apps to assist customers/employees in troubleshooting common problems and view scan history (retrieved from an AJAX request to backend API). These greatly reduce support requests.",
+                        "Supervised backend (built with Django), developed improvements as well as reported bugs on Bitbucket and deployed fixes.",
+                        "Created a script to re-image USBs and discovered a solution to enable Bluetooth compatibility for an early stage Mac product which was crucial to the success of the product launch.",
+                        "Coordinated and took initiative to bring 12 employees up to speed with using the product and how to efficiently resolve support tickets. I was their go-to person when problems could not be resolved.",
+                        "Played a big part in the company’s success, caught 90% of product bugs early and improved upon. Customers/employers were extremely happy with my service and going out of my way attitude."
+                        ]
     }, {
         "employer": "McGill University",
         "title": "Senior IT Consultant",
         "location": "Montreal, QC",
         "dates": "2012",
-        "description": "Educated professors and students how to use Information and Technology in order to meet their objectives and overcome problems. Interviewed and assessed multiple applicants for hiring. Trained and supervised junior IT consultants."
+        "description": [
+                        "Educated professors and students how to use Information and Technology in order to meet their objectives and overcome problems.",
+                        "Interviewed and assessed multiple applicants for hiring. Trained and supervised junior IT consultants."
+                        ]
     }, {
         "employer": "McGill University",
         "title": "Junior IT Consultant",
         "location": "Montreal, QC",
         "dates": "2011",
-        "description": "Assisted all faculty members of Desautels Faculty of Management in solving IT related issues. Ensured all hardware and software services are up to faculty standards. Promoted in 3 months due to excellent work."
+        "description": [
+                        "Assisted all faculty members of Desautels Faculty of Management in solving IT related issues. Ensured all hardware and software services were up to faculty standards.",
+                        "Promoted in 3 months due to excellent work."
+                        ]
     }, {
         "employer": "McGill University",
         "title": "Research Assistant",
         "location": "Montreal, QC",
         "dates": "2011",
-        "description": "Collaborated with a professor for research in implementing an integrated glucose control system to treat patients with diabetes. Collected data for research and used MATLAB to display data. Successfully aided in the advancement of the research study."
+        "description": [
+                        "Collaborated with a professor for research in implementing an integrated glucose control system to treat patients with diabetes.",
+                        "Collected data for research and used MATLAB to display data.",
+                        "Successfully aided in the advancement of the research study."
+                        ]
     }],
 
     "display": function() {
@@ -260,16 +277,32 @@ var work = {
             //create new div for work experience
             $("#workExperience").append(HTMLworkStart);
 
-            var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
-            var formattedWorkTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
-            var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
-            var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
-            var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+            var currentJob = work.jobs[job];
 
-            $(".work-entry:last").append(formattedEmployer + formattedWorkTitle);
+            var formattedEmployer = HTMLworkEmployer.replace("%data%", currentJob.employer);
+            var formattedWorkTitle = HTMLworkTitle.replace("%data%", currentJob.title);
+            var formattedLocation = HTMLworkLocation.replace("%data%", currentJob.location);
+            var formattedDates = HTMLworkDates.replace("%data%", currentJob.dates);
+
+            $(".work-entry:last").append(formattedWorkTitle);
+            $(".work-entry:last").append(formattedEmployer);
             $(".work-entry:last").append(formattedLocation);
             $(".work-entry:last").append(formattedDates);
-            $(".work-entry:last").append(formattedDescription);
+
+            console.log(formattedEmployer);
+
+            if (currentJob.description.length > 0) {
+                // Append work list container (i.e <ul></ul>)
+                $(".work-entry:last").append(HTMLworkDescriptionStart);
+
+                // Go through each description and append as bullet points
+                for (var i=0; i < currentJob.description.length; i++) {
+                    var formattedDescription = HTMLworkDescription.replace("%data%", currentJob.description[i]);
+                    console.log(formattedDescription);
+                    $(".work-description:last").append(formattedDescription);
+                }
+            }
+
         }
     }
 };

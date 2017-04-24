@@ -51,10 +51,12 @@ h2 {
 
 
 /* CONTACTS */
+
+
 /* Top Contact */
 
 .topContactsBox {
-  float: right;
+    float: right;
 }
 
 .topContactsBox h2 {
@@ -129,6 +131,20 @@ h2 {
     line-height: 15px;
 }
 
+.work-title {
+    font-size: 24px;
+}
+
+.work-employer,
+.work-location {
+    font-size: 18px;
+    color: #0398E2;
+}
+
+.work-description {
+    padding-left: 20px;
+}
+
 .footer-flex-box {
     display: -webkit-flex;
     display: flex;
@@ -163,59 +179,52 @@ h2 {
     padding-bottom: 5%;
 }
 
+
 /* Media Queries */
 
+
 /* Small devices (tablets, 768px and up) */
-@media only screen and (min-width: 768px) and (max-width:  991px) {
 
-  .header-data {
-    text-align: center;
-  }
-
-  .topContactsBox {
-    float: none;
-    display: inline-block;
-  }
-
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .header-data {
+        text-align: center;
+    }
+    .topContactsBox {
+        float: none;
+        display: inline-block;
+    }
 }
 
+
 /* Extra small devices (phones, less than 768px) */
+
 @media only screen and (max-width: 767px) {
-
-  .header-data {
-    text-align: center;
-  }
-
-  .header-data h1 {
-    font-size: 40px;
-  }
-
+    .header-data {
+        text-align: center;
+    }
+    .header-data h1 {
+        font-size: 40px;
+    }
     .header-data h2 {
-    font-size: 24px;
-  }
-
-  .topContactsBox {
-    float: none;
-    display: inline-block;
-  }
-
-  #skills-list .label {
-    font-size: 10px;
-    margin: 2px;
-  }
-
-  .project-entry img {
-    margin-bottom: 5px;
-  }
-
-  #map {
-    height: 80%;
-  }
-
-  #mapDiv {
-    height: 330px;
-    width: 100%;
-    padding-bottom: 5%;
-  }
-
+        font-size: 24px;
+    }
+    .topContactsBox {
+        float: none;
+        display: inline-block;
+    }
+    #skills-list .label {
+        font-size: 10px;
+        margin: 2px;
+    }
+    .project-entry img {
+        margin-bottom: 5px;
+    }
+    #map {
+        height: 80%;
+    }
+    #mapDiv {
+        height: 330px;
+        width: 100%;
+        padding-bottom: 5%;
+    }
 }
