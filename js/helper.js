@@ -206,8 +206,8 @@ function initializeMap() {
         bounds.extend(new google.maps.LatLng(lat, lon));
         // fit the map to the new marker
         map.fitBounds(bounds);
-        // Apply zoom level for map
-        //map.setZoom(14);
+        // Apply zoom level for map (1 = world)
+        map.setZoom(1);
         // center the map
         map.setCenter(bounds.getCenter());
     }
@@ -271,5 +271,5 @@ window.addEventListener('load', initializeMap);
 window.addEventListener('resize', function(e) {
     //Make sure the map bounds get updated on page resize
     map.fitBounds(mapBounds);
-    //map.setZoom(14); //To keep zoom level the same
+    map.setZoom(1); //To keep zoom level the same
 });
