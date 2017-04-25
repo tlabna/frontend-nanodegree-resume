@@ -394,7 +394,7 @@ var projects = {
 };
 projects.display();
 
-
+/* Languages */
 var languages = {
     "languages" : [{
         "name" : "English",
@@ -421,14 +421,11 @@ var languages = {
             $("#languages").append(formattedLanguageName);
             $("#languages").append(HTMLlanguagesBarStart);
 
-            console.log(currentLanguage.level);
-
             if (currentLanguage.level == 3) {
                 $(".progress:last").append(HTMLlanguageNativeBar);
                 $(".progress-bar-success:last").append(HTMLlanguageNative);
             }
             else if (currentLanguage.level == 2) {
-                console.log(currentLanguage.name);
                 $(".progress:last").append(HTMLlanguageFullProficiencyBar);
                 $(".progress-bar-info:last").append(HTMLlanguageFullProficiency);
             }
@@ -443,6 +440,33 @@ var languages = {
     }
 };
 languages.display();
+
+
+/* Distinctions */
+var distinctions = {
+    "distinctions" : [
+        "Member of the McGill varsity tennis team",
+        "Competed in pro level tennis tournaments internationally",
+        "GCSE Award for best school project in Information Technology (Top 3% Worldwide)",
+        "International Award (also known as the Duke of Edinburgh Award) - Silver Level"
+    ],
+
+    "display" : function() {
+        'use strict';
+
+        $("#distinctions").append(HTMLdistinctionsStart);
+
+        for (var distinction = 0; distinction < distinctions.distinctions.length; distinction++){
+            var currentDistinction = distinctions.distinctions[distinction];
+
+            var formattedDistinction = HTMLdistinction.replace("%data%", currentDistinction);
+
+            $(".distinction-list").append(formattedDistinction);
+
+        }
+    }
+};
+distinctions.display();
 
 //collecting click locations function
 $(document).click(function(loc) {

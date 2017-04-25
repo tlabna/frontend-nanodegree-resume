@@ -71,6 +71,9 @@ var HTMLlanguageNative = '<span>Native or bilingual proficiency</span>';
 var HTMLlanguageFullProficiency = '<span>Full professional proficiency</span>';
 var HTMLlanguageLimitedProficiency = '<span>Limited professional proficiency</span>';
 
+var HTMLdistinctionsStart = '<ul class="distinction-list"></ul>';
+var HTMLdistinction = '<li>%data%</li>';
+
 var internationalizeButton = '<button>Internationalize</button>';
 var googleMap = '<div id="map"></div>';
 
