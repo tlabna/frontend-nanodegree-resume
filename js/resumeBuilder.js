@@ -394,6 +394,56 @@ var projects = {
 };
 projects.display();
 
+
+var languages = {
+    "languages" : [{
+        "name" : "English",
+        "level" : 3
+    },
+    {
+        "name" : "Arabic",
+        "level" : 3
+    },
+    {
+        "name" : "French",
+        "level" : 2
+    }],
+
+    "display" : function() {
+        'use strict';
+
+        for (var language = 0; language < languages.languages.length; language++) {
+
+            var currentLanguage = languages.languages[language];
+
+            var formattedLanguageName = HTMLlanguageName.replace("%data%", currentLanguage.name);
+
+            $("#languages").append(formattedLanguageName);
+            $("#languages").append(HTMLlanguagesBarStart);
+
+            console.log(currentLanguage.level);
+
+            if (currentLanguage.level == 3) {
+                $(".progress:last").append(HTMLlanguageNativeBar);
+                $(".progress-bar-success:last").append(HTMLlanguageNative);
+            }
+            else if (currentLanguage.level == 2) {
+                console.log(currentLanguage.name);
+                $(".progress:last").append(HTMLlanguageFullProficiencyBar);
+                $(".progress-bar-info:last").append(HTMLlanguageFullProficiency);
+            }
+            else if (currentLanguage.level == 1) {
+                $(".progress:last").append(HTMLlanguageLimitedProficiencyBar);
+                $(".progress-bar-warning:last").append(HTMLlanguageLimitedProficiency);
+            }
+            else {
+                console.log("Something isn't right....Didn't find a number for language level");
+            }
+        }
+    }
+};
+languages.display();
+
 //collecting click locations function
 $(document).click(function(loc) {
     'use strict';

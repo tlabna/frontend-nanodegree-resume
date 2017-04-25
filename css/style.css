@@ -204,7 +204,12 @@ Sources: - https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Lay
 }
 
 
-/* MAP */
+/* Languages + MAP */
+
+.progress {
+  border-radius: 0;
+  margin-bottom: 5px;
+}
 
 #map {
     display: block;

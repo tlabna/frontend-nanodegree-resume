@@ -62,6 +62,15 @@ var HTMLonlineSchool = '<span class="education-name">%data%</span>';
 var HTMLonlineDates = '<div class="date-text">%data%</div>';
 var HTMLonlineURL = '<a href="#">%data%</a>';
 
+var HTMLlanguageName = '<div class="language-name">%data%</div>';
+var HTMLlanguagesBarStart = '<div class="progress"></div>';
+var HTMLlanguageNativeBar = '<div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>';
+var HTMLlanguageFullProficiencyBar = '<div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%"></div>';
+var HTMLlanguageLimitedProficiencyBar = '<div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%"></div>';
+var HTMLlanguageNative = '<span>Native or bilingual proficiency</span>';
+var HTMLlanguageFullProficiency = '<span>Full professional proficiency</span>';
+var HTMLlanguageLimitedProficiency = '<span>Limited professional proficiency</span>';
+
 var internationalizeButton = '<button>Internationalize</button>';
 var googleMap = '<div id="map"></div>';
 
