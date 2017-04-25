@@ -162,6 +162,9 @@ function initializeMap() {
             locations.push(job.location);
         });
 
+        //Hard coding an extra location
+        locations.push("Doha, Qatar");
+
         return locations;
     }
 
@@ -204,7 +207,7 @@ function initializeMap() {
         // fit the map to the new marker
         map.fitBounds(bounds);
         // Apply zoom level for map
-        map.setZoom(14);
+        //map.setZoom(14);
         // center the map
         map.setCenter(bounds.getCenter());
     }
@@ -268,5 +271,5 @@ window.addEventListener('load', initializeMap);
 window.addEventListener('resize', function(e) {
     //Make sure the map bounds get updated on page resize
     map.fitBounds(mapBounds);
-    map.setZoom(14); //To keep zoom level the same
+    //map.setZoom(14); //To keep zoom level the same
 });
