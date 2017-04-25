@@ -289,8 +289,6 @@ var work = {
             $(".work-entry:last").append(formattedLocation);
             $(".work-entry:last").append(formattedDates);
 
-            console.log(formattedEmployer);
-
             if (currentJob.description.length > 0) {
                 // Append work list container (i.e <ul></ul>)
                 $(".work-entry:last").append(HTMLworkDescriptionStart);
@@ -298,7 +296,6 @@ var work = {
                 // Go through each description and append as bullet points
                 for (var i=0; i < currentJob.description.length; i++) {
                     var formattedDescription = HTMLworkDescription.replace("%data%", currentJob.description[i]);
-                    console.log(formattedDescription);
                     $(".work-description:last").append(formattedDescription);
                 }
             }
@@ -310,15 +307,31 @@ work.display();
 
 var projects = {
     "projects": [{
-        "title": "Lorem1",
-        "dates": "2016",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi asperiores sapiente iusto dicta saepe commodi et sit beatae iste quibusdam voluptatum optio fuga, impedit nulla nisi a quo, repellat reprehenderit.",
-        "images": ["images/197x148.gif"]
+        "title": "Linux Server Configuration",
+        "dates": "April 2017",
+        "description": "Hosted my music catalog application on Amazon Web Services, securing it from a number of attack vectors and installing/configuring web and database servers.",
+        "technologies": ["SSH", "Linux", "Apache", "PostgreSQL"],
+        "images": ["images/music-catalog.png"]
     }, {
         "title": "Lorem2",
         "dates": "2015",
         "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi, voluptates. Commodi et rem facere quis, laboriosam nostrum sint cupiditate ipsum harum necessitatibus corporis inventore molestiae dolorum doloribus at tempora minima.",
-        "images": ["images/197x148.gif", "images/197x148.gif"]
+        "technologies": [],
+        "images": ["https://placehold.it/650x650"]
+    },
+    {
+        "title": "Lorem2",
+        "dates": "2014",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi, voluptates. Commodi et rem facere quis, laboriosam nostrum sint cupiditate ipsum harum necessitatibus corporis inventore molestiae dolorum doloribus at tempora minima.",
+        "technologies": [],
+        "images": ["https://placehold.it/650x650"]
+    },
+    {
+        "title": "Lorem2",
+        "dates": "2013",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi, voluptates. Commodi et rem facere quis, laboriosam nostrum sint cupiditate ipsum harum necessitatibus corporis inventore molestiae dolorum doloribus at tempora minima.",
+        "technologies": [],
+        "images": ["https://placehold.it/650x650"]
     }],
 
     "display": function() {
@@ -327,6 +340,7 @@ var projects = {
         for (var project = 0; project < projects.projects.length; project++) {
 
             $("#projects").append(HTMLprojectStart);
+            $(".project-entry:last").append(HTMLprojectThumbnail);
 
             var currentProject = projects.projects[project];
 
@@ -334,17 +348,34 @@ var projects = {
             var formattedDates = HTMLprojectDates.replace("%data%", currentProject.dates);
             var formattedDescription = HTMLprojectDescription.replace("%data%", currentProject.description);
 
-            $(".project-entry:last").append(formattedTitle);
-            $(".project-entry:last").append(formattedDates);
-            $(".project-entry:last").append(formattedDescription);
-
             if (currentProject.images.length > 0) {
                 for (var image = 0; image < currentProject.images.length; image++) {
                     var formattedImage = HTMLprojectImage.replace("%data%", currentProject.images[image]);
 
-                    $(".project-entry:last").append(formattedImage);
+                    $(".thumbnail:last").append(formattedImage);
                 }
             }
+
+            // Project caption container
+            $(".thumbnail:last").append(HTMLprojectCaption);
+
+            // Caption Details
+            $(".caption:last").append(formattedTitle);
+            $(".caption:last").append(formattedDates);
+
+            //Check if we technologies, then apply container and label for each technology
+            if (currentProject.technologies.length > 0) {
+                $(".caption:last").append(HTMLprojectTechnologies);
+
+                for (var tech = 0; tech < currentProject.technologies.length; tech++) {
+                    var formattedTechnology = HTMLprojectTechnology.replace("%data%", currentProject.technologies[tech]);
+
+                    $(".project-technologies").append(formattedTechnology);
+                }
+            }
+
+            $(".caption:last").append(formattedDescription);
+
         }
     }
 };

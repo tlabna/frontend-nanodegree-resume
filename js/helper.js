@@ -38,11 +38,15 @@ var HTMLworkLocation = '<span class="work-location"> - %data%</span>';
 var HTMLworkDescriptionStart = '<ul class="work-description"></ul>';
 var HTMLworkDescription = '<li>%data%</li>';
 
-var HTMLprojectStart = '<div class="project-entry"></div>';
-var HTMLprojectTitle = '<a href="#">%data%</a>';
+var HTMLprojectStart = '<div class="project-entry col-md-4"></div>';
+var HTMLprojectThumbnail = '<div class="thumbnail"></div>';
+var HTMLprojectCaption = '<div class="caption text-center"></div>';
+var HTMLprojectTitle = '<h3>%data%</h3>';
 var HTMLprojectDates = '<div class="date-text">%data%</div>';
-var HTMLprojectDescription = '<p>%data%</p>';
+var HTMLprojectDescription = '<h5>%data%</h5>';
 var HTMLprojectImage = '<img src="%data%">';
+var HTMLprojectTechnologies = '<h5 class="project-technologies"></h5>';
+var HTMLprojectTechnology = '<span class="label label-danger">%data%</span>';
 
 var HTMLschoolStart = '<div class="education-entry"></div>';
 var HTMLschoolName = '<a href="%#%" class="entry-name">%data%';

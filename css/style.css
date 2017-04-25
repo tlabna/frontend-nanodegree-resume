@@ -102,17 +102,8 @@ h2 {
 /* Education + Work + Projects */
 
 .education-entry,
-.work-entry,
-.project-entry {
+.work-entry {
     margin: 15px 0;
-}
-
-.project-entry p {
-    margin: 10px 0;
-}
-
-.project-entry img {
-    margin-right: 10px;
 }
 
 .entry-name {
@@ -143,6 +134,11 @@ h2 {
 
 .work-description {
     padding-left: 20px;
+}
+
+.thumbnail .label {
+  border-radius: 0;
+  margin-right: 2px;
 }
 
 .footer-flex-box {
