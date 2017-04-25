@@ -309,29 +309,43 @@ var projects = {
     "projects": [{
         "title": "Linux Server Configuration",
         "dates": "April 2017",
-        "description": "Hosted my music catalog application on Amazon Web Services, securing it from a number of attack vectors and installing/configuring web and database servers.",
+        "description": "Hosted music catalog on Amazon servers, secured it from a number of attack vectors and installed/configured web and database servers.",
         "technologies": ["SSH", "Linux", "Apache", "PostgreSQL"],
-        "images": ["images/music-catalog.png"]
+        "images": ["images/music-catalog-linuxserver.png"]
     }, {
-        "title": "Lorem2",
-        "dates": "2015",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi, voluptates. Commodi et rem facere quis, laboriosam nostrum sint cupiditate ipsum harum necessitatibus corporis inventore molestiae dolorum doloribus at tempora minima.",
-        "technologies": [],
-        "images": ["https://placehold.it/650x650"]
+        "title": "Feed Reader Testing",
+        "dates": "April 2017",
+        "description": "Programmed comprehensive unit tests, using the Jasmine testing framework, for an RSS Feed Reader application that uses Google's RSS API.",
+        "technologies": ["JavaScript", "Jasmine", "JavaScript testing frameworks"],
+        "images": ["images/feed-reader.png"]
     },
     {
-        "title": "Lorem2",
-        "dates": "2014",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi, voluptates. Commodi et rem facere quis, laboriosam nostrum sint cupiditate ipsum harum necessitatibus corporis inventore molestiae dolorum doloribus at tempora minima.",
-        "technologies": [],
-        "images": ["https://placehold.it/650x650"]
+        "title": "Neighbourhood Map",
+        "dates": "March 2017",
+        "description": "Responsive single page web application (uses Foursquare API and Google Maps API) to find interesting places in a neighbourhood.",
+        "technologies": ["JavaScript", "HTML", "CSS", "Knockout", "AJAX", "JavaScript frameworks"],
+        "images": ["images/neighbourhood-map.png"]
     },
     {
-        "title": "Lorem2",
-        "dates": "2013",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi, voluptates. Commodi et rem facere quis, laboriosam nostrum sint cupiditate ipsum harum necessitatibus corporis inventore molestiae dolorum doloribus at tempora minima.",
-        "technologies": [],
-        "images": ["https://placehold.it/650x650"]
+        "title": "Item Catalog",
+        "dates": "March 2017",
+        "description": "Developed a content management system using the Flask framework in Python. Authentication is provided via OAuth and all data is stored within a PostgreSQL database.",
+        "technologies": ["HTML", "CSS", "Python", "Flask", "SQL", "Vagrant"],
+        "images": ["images/music-catalog.png"]
+    },
+    {
+        "title": "Website Optimization",
+        "dates": "March 2017",
+        "description": "Optimized an inefficient web application's JavaScript, CSS and assets delivery, ensuring it runs at 60fps and achieves a PageSpeed score of at least 90.",
+        "technologies": ["HTML", "CSS", "Chrome Developer Tools", "Critical rendering path", "60FPS rendering"],
+        "images": ["images/pagespeed-insights.png"]
+    },
+    {
+        "title": "Online Resume",
+        "dates": "December 2016",
+        "description": "Using jQuery, developed an interactive resume application that reads all data from a JSON file and then dynamically modifies the DOM to display the information. Further customized the project by personalizing the design using CSS.",
+        "technologies": ["HTML", "CSS", "JavaScript", "JQuery"],
+        "images": ["images/online-resume.png"]
     }],
 
     "display": function() {
@@ -370,7 +384,7 @@ var projects = {
                 for (var tech = 0; tech < currentProject.technologies.length; tech++) {
                     var formattedTechnology = HTMLprojectTechnology.replace("%data%", currentProject.technologies[tech]);
 
-                    $(".project-technologies").append(formattedTechnology);
+                    $(".project-technologies:last").append(formattedTechnology);
                 }
             }
 

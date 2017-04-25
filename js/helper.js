@@ -38,7 +38,7 @@ var HTMLworkLocation = '<span class="work-location"> - %data%</span>';
 var HTMLworkDescriptionStart = '<ul class="work-description"></ul>';
 var HTMLworkDescription = '<li>%data%</li>';
 
-var HTMLprojectStart = '<div class="project-entry col-md-4"></div>';
+var HTMLprojectStart = '<div class="project-entry col-md-4 equalize"></div>';
 var HTMLprojectThumbnail = '<div class="thumbnail"></div>';
 var HTMLprojectCaption = '<div class="caption text-center"></div>';
 var HTMLprojectTitle = '<h3>%data%</h3>';

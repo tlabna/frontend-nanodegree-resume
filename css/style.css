@@ -12,6 +12,36 @@ h2 {
     border-bottom: 2px solid #404040;
 }
 
+/* Helpers */
+
+/*
+Equalize classes are used for projects sections.
+#projects is the flex container, containing flex items .project-entries.
+Doing this will ensure the each project thumbnail is the same height and will allow
+wrapping to the next line correctly.
+
+Why? Since putting the projects in a single row that is larger than 12 columns, wrapping
+thumbnails does not function properly because elements are not the same height. One solution could of been to create a new row after reaching 12 columns, however, this won't work well as you'd expect
+because you could have 2 projects per line when you only want 1 project per line on smaller devices and putting each project in a single row achieves that. Therefore, Flexbox was the best way to achieve this.
+
+Sources: - https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes;
+         - https://stackoverflow.com/questions/39130494/how-to-make-bootstrap-thumbnails-same-size-even-after-resizing-the-window/39135570
+*/
+.equalize-row {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+.equalize {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex
+}
+
 
 /*Header */
 
@@ -139,6 +169,10 @@ h2 {
 .thumbnail .label {
   border-radius: 0;
   margin-right: 2px;
+
+  /* Below 2 properties will get labels to wrap if it exceeds width of parent container */
+  white-space: normal;
+  display: inline-block;
 }
 
 .footer-flex-box {
