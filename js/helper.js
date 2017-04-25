@@ -49,16 +49,16 @@ var HTMLprojectTechnologies = '<h5 class="project-technologies"></h5>';
 var HTMLprojectTechnology = '<span class="label label-danger">%data%</span>';
 
 var HTMLschoolStart = '<div class="education-entry"></div>';
-var HTMLschoolName = '<a href="%#%" class="entry-name">%data%';
-var HTMLschoolDegree = ' -- %data%</a>';
+var HTMLschoolName = '<span class="education-name">%data%</span>';
+var HTMLschoolDegree = '<div class="education-title">%data%</div>';
 var HTMLschoolDates = '<div class="date-text">%data%</div>';
-var HTMLschoolLocation = '<div class="entry-location">%data%</div>';
-var HTMLschoolMajor = '<em><br>Major: %data%</em>';
-var HTMLschoolMinor = '<em><br>Minor: %data%</em>';
+var HTMLschoolLocation = '<span class="education-location"> - %data%</span>';
+var HTMLschoolMajor = '<em>Major: %data%</em>';
+var HTMLschoolMinor = '<br><em>Minor: %data%</em>';
 
-var HTMLonlineClasses = '<h3><i class="fa fa-desktop" aria-hidden="true"></i> Online Classes</h3>';
-var HTMLonlineTitle = '<a href="#">%data%';
-var HTMLonlineSchool = ' - %data%</a>';
+var HTMLonlineClasses = '<h3><i class="fa fa-desktop eduonline-header" aria-hidden="true"></i> Online Classes</h3>';
+var HTMLonlineTitle = '<div class="education-title">%data%</div>';
+var HTMLonlineSchool = '<span class="education-name">%data%</span>';
 var HTMLonlineDates = '<div class="date-text">%data%</div>';
 var HTMLonlineURL = '<a href="#">%data%</a>';
 

@@ -12,7 +12,9 @@ h2 {
     border-bottom: 2px solid #404040;
 }
 
+
 /* Helpers */
+
 
 /*
 Equalize classes are used for projects sections.
@@ -27,19 +29,20 @@ because you could have 2 projects per line when you only want 1 project per line
 Sources: - https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes;
          - https://stackoverflow.com/questions/39130494/how-to-make-bootstrap-thumbnails-same-size-even-after-resizing-the-window/39135570
 */
+
 .equalize-row {
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-
     -webkit-flex-wrap: wrap;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
 }
+
 .equalize {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex
 }
 
 
@@ -136,6 +139,10 @@ Sources: - https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Lay
     margin: 15px 0;
 }
 
+.eduonline-header {
+    margin-top: 40px;
+}
+
 .entry-name {
     font-size: 16px;
     color: #0398E2;
@@ -152,12 +159,15 @@ Sources: - https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Lay
     line-height: 15px;
 }
 
-.work-title {
-    font-size: 24px;
+.work-title,
+.education-title {
+    font-size: 22px;
 }
 
 .work-employer,
-.work-location {
+.work-location,
+.education-location,
+.education-name {
     font-size: 18px;
     color: #0398E2;
 }
@@ -167,12 +177,11 @@ Sources: - https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Lay
 }
 
 .thumbnail .label {
-  border-radius: 0;
-  margin-right: 2px;
-
-  /* Below 2 properties will get labels to wrap if it exceeds width of parent container */
-  white-space: normal;
-  display: inline-block;
+    border-radius: 0;
+    margin-right: 2px;
+    /* Below 2 properties will get labels to wrap if it exceeds width of parent container */
+    white-space: normal;
+    display: inline-block;
 }
 
 .footer-flex-box {
