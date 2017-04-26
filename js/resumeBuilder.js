@@ -11,7 +11,7 @@ var bio = {
     },
     "biopic": "images/fry.jpg",
     "welcomeMessage": "Welcome to my Resume! Here you'll get to know a little about me and my past experiences. If you wish to get in conact with me, don't hesitate to get in touch.",
-    "skills": ["HTML", "CSS", "JS", "AJAX", "Python", "MySQL", "Django"],
+    "skills": ["HTML", "CSS", "JS", "AJAX", "Python", "MySQL/PostgreSQL", "Django", "Knockout", "Jasmine"],
     "display": function() {
         'use strict';
 
@@ -90,7 +90,7 @@ var data = [{
     label: bio.skills[0], //HTML
     labelcolor: "#F7464A" //red
 }, {
-    value: 8,
+    value: 9,
     color: "#FFCC00",
     highlight: "#FFEB99",
     label: bio.skills[1], //CSS
@@ -102,7 +102,7 @@ var data = [{
     label: bio.skills[2], //JS
     labelcolor: "#FF9933" //orange
 }, {
-    value: 6,
+    value: 8,
     color: "#3399FF",
     highlight: "#99CCFF",
     label: bio.skills[3], //AJAX
@@ -112,9 +112,9 @@ var data = [{
     color: "#33CC33",
     highlight: "#ADEBAD",
     label: bio.skills[4], //Python
-    labelcolor: "#33CC33"
+    labelcolor: "#33CC33" //green
 }, {
-    value: 5,
+    value: 7,
     color: "#FF66FF",
     highlight: "#FF99FF",
     label: bio.skills[5], //MySQL
@@ -125,6 +125,18 @@ var data = [{
     highlight: "#CCC",
     label: bio.skills[6], //DJANGO
     labelcolor: "#999" //grey
+}, {
+    value: 6,
+    color: "#000",
+    highlight: "#404040",
+    label: bio.skills[7], //Knockout
+    labelcolor: "#000" //black
+}, {
+    value: 5,
+    color: "#9999FF",
+    highlight: "#CCCCFF",
+    label: bio.skills[8], //Jasmin
+    labelcolor: "#9999FF" //black
 }];
 
 // Display skill labels
