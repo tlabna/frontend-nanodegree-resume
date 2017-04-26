@@ -21,6 +21,7 @@ var HTMLmobile = '<li class="contact-item"><span class="glyphicon glyphicon-earp
 var HTMLemail = '<li class="contact-item"><span class="glyphicon glyphicon-envelope"></span>%data%</li>';
 var HTMLtwitter = '<li class="flex-item"><span class="orange-text">twitter</span><span class="white-text">%data%</span></li>';
 var HTMLgithub = '<li class="contact-item"><span><i class="fa fa-github"></i></span>%data%</li>';
+var HTMLlinkedin = '<li class="contact-item"><span><i class="fa fa-linkedin"></i></span>%data%</li>';
 var HTMLblog = '<li class="flex-item"><span class="orange-text">blog</span><span class="white-text">%data%</span></li>';
 var HTMLlocation = '<li class="contact-item"><span class="glyphicon glyphicon-map-marker"></span>%data%</li>';
 

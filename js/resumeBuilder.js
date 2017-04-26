@@ -4,8 +4,9 @@ var bio = {
     "role": "Software Engineer - Full Stack Developer",
     "contacts": {
         "mobile": "514-690-1248",
-        "email": "tlabna@udacity.com",
+        "email": "tlabna@me.com",
         "github": "@tlabna",
+        "linkedin" : "@tamerlabna",
         "location": "Montreal, QC"
     },
     "biopic": "images/fry.jpg",
@@ -27,19 +28,23 @@ var bio = {
         $("#header").prepend(formattedFirstName);
 
         // Formatting Contacts
-        var formattedMobile;
+        //var formattedMobile; //Removing number from site
         var formattedEmail;
         var formattedGitHub;
+        var formattedLinkedIn
         var formattedLocation;
 
         for (var contact in bio.contacts) {
             if (bio.contacts.hasOwnProperty(contact)) {
                 if (contact == 'mobile') {
-                    formattedMobile = HTMLmobile.replace("%data%", bio.contacts[contact]);
+                    // Removing number from site
+                    //formattedMobile = HTMLmobile.replace("%data%", bio.contacts[contact]);
                 } else if (contact == 'email') {
                     formattedEmail = HTMLemail.replace("%data%", bio.contacts[contact]);
                 } else if (contact == 'github') {
                     formattedGitHub = HTMLgithub.replace("%data%", bio.contacts[contact]);
+                } else if (contact == 'linkedin') {
+                    formattedLinkedIn = HTMLlinkedin.replace("%data%", bio.contacts[contact]);
                 } else if (contact == 'location') {
                     formattedLocation = HTMLlocation.replace("%data%", bio.contacts[contact]);
                 } else {
@@ -49,7 +54,7 @@ var bio = {
         }
 
         var contactArray = [];
-        contactArray.push(formattedMobile, formattedEmail, formattedGitHub, formattedLocation);
+        contactArray.push(/*formattedMobile,*/ formattedEmail, formattedGitHub, formattedLinkedIn, formattedLocation);
 
         for (var i = 0; i < contactArray.length; i++) {
             $("#topContacts").append(contactArray[i]);
@@ -512,17 +517,13 @@ $(window).resize(checkSize);
 function checkSize() {
     'use strict';
 
-    console.log($(".topContactsBox").css("float"));
-
     if ($(".topContactsBox").css("float") === "none") {
         $(".topContactsBox").parent().css({
             "text-align": "center"
         });
-        console.log("in resize");
     }
     //Remove centering if window is resized back to a larger screen
     else if ($(".topContactsBox").css("float") === "right" && $(".topContactsBox").parent().css("text-align") === "center") {
-        console.log("Removing style");
         $(".topContactsBox").parent().css("text-align", "");
     }
 }
