@@ -503,22 +503,26 @@ $(document).ready(function() {
     'use strict';
     // run test on initial page load
     checkSize();
-
-    // run test on resize of the window
-    $(window).resize(checkSize);
 });
+
+// run test on resize of the window
+$(window).resize(checkSize);
 
 //Function to the css rule
 function checkSize() {
     'use strict';
 
-    if ($(".topContactsBox").css("float") == "none") {
+    console.log($(".topContactsBox").css("float"));
+
+    if ($(".topContactsBox").css("float") === "none") {
         $(".topContactsBox").parent().css({
             "text-align": "center"
         });
+        console.log("in resize");
     }
     //Remove centering if window is resized back to a larger screen
-    else if ($(".topContactsBox ul").css("float" == "right") && $(".topContactsBox").parent().css("text-align") == "center") {
+    else if ($(".topContactsBox").css("float") === "right" && $(".topContactsBox").parent().css("text-align") === "center") {
+        console.log("Removing style");
         $(".topContactsBox").parent().css("text-align", "");
     }
 }

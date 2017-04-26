@@ -90,6 +90,7 @@ Sources: - https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Lay
 
 .topContactsBox {
     float: right;
+    text-align: left;
 }
 
 .topContactsBox h2 {
@@ -240,6 +241,7 @@ Sources: - https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Lay
     .topContactsBox {
         float: none;
         display: inline-block;
+        text-align: left;
     }
 }
 
@@ -259,13 +261,11 @@ Sources: - https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Lay
     .topContactsBox {
         float: none;
         display: inline-block;
+        text-align: left;
     }
     #skills-list .label {
         font-size: 10px;
         margin: 2px;
-    }
-    .project-entry img {
-        margin-bottom: 5px;
     }
     #map {
         height: 80%;
