@@ -247,7 +247,7 @@ var work = {
         "employer": "FixMeStick Technologies",
         "title": "Software Engineer",
         "location": "Montreal, QC",
-        "dates": "2013—2015",
+        "dates": "2013—2016",
         "description": [
                         "Administered complete customer support system, including web development of customer platform as well as communicating with 1000s of customers over the phone, email and chat (in English and French).",
                         "Designed responsive web apps to assist customers/employees in troubleshooting common problems and view scan history (retrieved from an AJAX request to backend API). These greatly reduce support requests.",
@@ -327,41 +327,53 @@ var projects = {
         "dates": "April 2017",
         "description": "Hosted music catalog on Amazon servers, secured it from a number of attack vectors and installed/configured web and database servers.",
         "technologies": ["SSH", "Linux", "Apache", "PostgreSQL"],
-        "images": ["images/music-catalog-linuxserver.png"]
+        "images": ["images/music-catalog-linuxserver.png"],
+        "github": "https://github.com/tlabna/linux-server-config",
+        "demo": ""
     }, {
         "title": "Feed Reader Testing",
         "dates": "April 2017",
         "description": "Programmed comprehensive unit tests, using the Jasmine testing framework, for an RSS Feed Reader application that uses Google's RSS API.",
         "technologies": ["JavaScript", "Jasmine", "JavaScript testing frameworks"],
-        "images": ["images/feed-reader.png"]
+        "images": ["images/feed-reader.png"],
+        "github": "https://github.com/tlabna/feedreader-testing",
+        "demo": ""
     },
     {
         "title": "Neighbourhood Map",
         "dates": "March 2017",
         "description": "Responsive single page web application (uses Foursquare API and Google Maps API) to find interesting places in a neighbourhood.",
         "technologies": ["JavaScript", "HTML", "CSS", "Knockout", "AJAX", "JavaScript frameworks"],
-        "images": ["images/neighbourhood-map.png"]
+        "images": ["images/neighbourhood-map.png"],
+        "github": "https://github.com/tlabna/neighbourhood-map",
+        "demo": ""
     },
     {
         "title": "Item Catalog",
         "dates": "March 2017",
         "description": "Developed a content management system using the Flask framework in Python. Authentication is provided via OAuth and all data is stored within a PostgreSQL database.",
         "technologies": ["HTML", "CSS", "Python", "Flask", "SQL", "Vagrant"],
-        "images": ["images/music-catalog.png"]
+        "images": ["images/music-catalog.png"],
+        "github": "https://github.com/tlabna/item-catalog",
+        "demo": ""
     },
     {
         "title": "Website Optimization",
         "dates": "March 2017",
         "description": "Optimized an inefficient web application's JavaScript, CSS and assets delivery, ensuring it runs at 60fps and achieves a PageSpeed score of at least 90.",
         "technologies": ["HTML", "CSS", "Chrome Developer Tools", "Critical rendering path", "60FPS rendering"],
-        "images": ["images/pagespeed-insights.png"]
+        "images": ["images/pagespeed-insights.png"],
+        "github": "https://github.com/tlabna/website-optimization",
+        "demo": ""
     },
     {
         "title": "Online Resume",
         "dates": "December 2016",
         "description": "Using jQuery, developed an interactive resume application that reads all data from a JSON file and then dynamically modifies the DOM to display the information. Further customized the project by personalizing the design using CSS.",
         "technologies": ["HTML", "CSS", "JavaScript", "JQuery"],
-        "images": ["images/online-resume.png"]
+        "images": ["images/online-resume2.png"],
+        "github": "https://github.com/tlabna/online-resume",
+        "demo": ""
     }],
 
     "display": function() {
@@ -405,6 +417,17 @@ var projects = {
             }
 
             $(".caption:last").append(formattedDescription);
+
+            // Check if github or demo links are available, if so append button to caption
+            if (currentProject.github !== "") {
+                var formattedGithub = HTMLprojectGithub.replace("#", currentProject.github);
+                $(".caption:last").append(formattedGithub);
+            }
+
+            if (currentProject.demo !== "") {
+                var formattedDemo = HTMLprojectDemo.replace("#", currentProject.demo);
+                $(".caption:last").append(formattedDemo);
+            }
 
         }
     }

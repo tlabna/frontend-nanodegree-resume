@@ -48,6 +48,8 @@ var HTMLprojectDescription = '<h5>%data%</h5>';
 var HTMLprojectImage = '<img src="%data%">';
 var HTMLprojectTechnologies = '<h5 class="project-technologies"></h5>';
 var HTMLprojectTechnology = '<span class="label label-danger">%data%</span>';
+var HTMLprojectDemo = "<a href='#' class='btn btn-info' role='button'>Demo</a>";
+var HTMLprojectGithub = "<a href='#' class='btn btn-info' role='button'>Github</a>";
 
 var HTMLschoolStart = '<div class="education-entry"></div>';
 var HTMLschoolName = '<span class="education-name">%data%</span>';
