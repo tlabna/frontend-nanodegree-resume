@@ -335,7 +335,7 @@ var projects = {
         "technologies": ["JavaScript", "React", "Firebase", "NPM", "Webpack", "Babel", "Axios", "HTML", "CSS"],
         "images": ["./images/github-battle.png"],
         "github": "https://github.com/tlabna/github-battle",
-        "demo": "https://github-battle-ec28a.firebaseapp.com/popular"
+        "demo": "https://github-battle-ec28a.firebaseapp.com"
     },
     {
         "title": "Linux Server Configuration",
