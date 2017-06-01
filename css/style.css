@@ -193,6 +193,10 @@ Sources: - https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Lay
   margin-top: 5px;
 }
 
+.demo {
+    margin-left: 5px;
+}
+
 .footer-flex-box {
     display: -webkit-flex;
     display: flex;

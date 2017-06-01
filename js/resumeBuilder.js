@@ -11,7 +11,7 @@ var bio = {
     },
     "biopic": "images/fry.jpg",
     "welcomeMessage": "Welcome to my Resume! Here you'll get to know a little about me and my past experiences. If you wish to get in conact with me, don't hesitate to get in touch.",
-    "skills": ["HTML", "CSS", "JS", "AJAX", "Python", "MySQL/PostgreSQL", "Django", "Knockout", "Jasmine"],
+    "skills": ["HTML", "CSS", "JS", "AJAX", "Python", "MySQL/PostgreSQL", "Django", "Knockout", "Jasmine", "React"],
     "display": function() {
         'use strict';
 
@@ -137,6 +137,12 @@ var data = [{
     highlight: "#CCCCFF",
     label: bio.skills[8], //Jasmin
     labelcolor: "#9999FF" //black
+}, {
+    value: 6,
+    color: "#2B3B8C",
+    highlight: "#7686D5",
+    label: bio.skills[9], //Jasmin
+    labelcolor: "#2B3B8C" //black
 }];
 
 // Display skill labels
@@ -323,6 +329,15 @@ work.display();
 
 var projects = {
     "projects": [{
+        "title": "GitHub Battle",
+        "dates": "May 2017",
+        "description": "Developed a React single page application using GitHub API where users can compare GitHub user accounts as well as display popular repositories on GitHub.",
+        "technologies": ["JavaScript", "React", "Firebase", "NPM", "Webpack", "Babel", "Axios", "HTML", "CSS"],
+        "images": ["./images/github-battle.png"],
+        "github": "https://github.com/tlabna/github-battle",
+        "demo": "https://github-battle-ec28a.firebaseapp.com/popular"
+    },
+    {
         "title": "Linux Server Configuration",
         "dates": "April 2017",
         "description": "Hosted music catalog on Amazon servers, secured it from a number of attack vectors and installed/configured web and database servers.",
