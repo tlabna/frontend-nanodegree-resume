@@ -29,7 +29,7 @@ var bio = {
 
         // Formatting Contacts
         //var formattedMobile; //Removing number from site
-        var formattedEmail;
+        //var formattedEmail; //Removing email from site
         var formattedGitHub;
         var formattedLinkedIn
         var formattedLocation;
@@ -39,9 +39,9 @@ var bio = {
                 if (contact == 'mobile') {
                     // Removing number from site
                     //formattedMobile = HTMLmobile.replace("%data%", bio.contacts[contact]);
-                } else if (contact == 'email') {
+                } /*else if (contact == 'email') {
                     formattedEmail = HTMLemail.replace("%data%", bio.contacts[contact]);
-                } else if (contact == 'github') {
+                }*/ else if (contact == 'github') {
                     formattedGitHub = HTMLgithub.replace("%data%", bio.contacts[contact]);
                 } else if (contact == 'linkedin') {
                     formattedLinkedIn = HTMLlinkedin.replace("%data%", bio.contacts[contact]);
@@ -54,7 +54,7 @@ var bio = {
         }
 
         var contactArray = [];
-        contactArray.push(/*formattedMobile,*/ formattedEmail, formattedGitHub, formattedLinkedIn, formattedLocation);
+        contactArray.push(/*formattedMobile, formattedEmail,*/ formattedGitHub, formattedLinkedIn, formattedLocation);
 
         for (var i = 0; i < contactArray.length; i++) {
             $("#topContacts").append(contactArray[i]);
@@ -461,7 +461,7 @@ var languages = {
     },
     {
         "name" : "French",
-        "level" : 2
+        "level" : 1
     }],
 
     "display" : function() {
