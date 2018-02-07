@@ -11,7 +11,7 @@ var bio = {
     },
     "biopic": "images/fry.jpg",
     "welcomeMessage": "Welcome to my Resume! Here you'll get to know a little about me and my past experiences. If you wish to get in conact with me, don't hesitate to get in touch.",
-    "skills": ["HTML", "CSS", "JS", "AJAX", "Python", "MySQL/PostgreSQL", "Django", "Knockout", "Jasmine", "React"],
+    "skills": ["HTML", "CSS", "JS/ES6", "AJAX", "Python", "MySQL/PostgreSQL", "Django", "Knockout", "Jasmine", "React Ecosystem"],
     "display": function() {
         'use strict';
 
@@ -118,7 +118,7 @@ var data = [{
     color: "#FF66FF",
     highlight: "#FF99FF",
     label: bio.skills[5], //MySQL
-    labelcolor: "#FF66FF"
+    labelcolor: "#FF66FF" //pink
 }, {
     value: 7,
     color: "#999",
@@ -136,13 +136,13 @@ var data = [{
     color: "#9999FF",
     highlight: "#CCCCFF",
     label: bio.skills[8], //Jasmin
-    labelcolor: "#9999FF" //black
+    labelcolor: "#9999FF" //light purple
 }, {
-    value: 6,
+    value: 8,
     color: "#2B3B8C",
     highlight: "#7686D5",
-    label: bio.skills[9], //Jasmin
-    labelcolor: "#2B3B8C" //black
+    label: bio.skills[9], //React
+    labelcolor: "#2B3B8C" //dark blue
 }];
 
 // Display skill labels
@@ -329,10 +329,28 @@ work.display();
 
 var projects = {
     "projects": [{
+        "title": "Duckr",
+        "dates": "December 2017",
+        "description": "Twitter like application built with React and Redux.",
+        "technologies": ["React", "Redux", "ImmutableJS", "NPM", "Webpack", "Babel", "HTML", "CSS", "Firebase"],
+        "images": ["./images/duckr.png"],
+        "github": "https://github.com/tlabna/duckr",
+        "demo": "https://duckr-wb.firebaseapp.com/"
+    },
+    {
+        "title": "Bus Finder Demo",
+        "dates": "June 2017",
+        "description": "Responsive micro-site demo built with React (using Busbud API and hosted on Heroku) that triggers a departure search on a specific day for users travelling from New York to Montreal who want to attend the Osheaga Music Festival.",
+        "technologies": ["React", "Express", "NPM", "Webpack", "Babel", "Axios", "HTML", "CSS", "Heroku"],
+        "images": ["./images/bus-finder.png"],
+        "github": "https://github.com/tlabna/coding-challenge-frontend-b",
+        "demo": "https://busbud-finder-challenge.herokuapp.com/"
+    },
+    {
         "title": "GitHub Battle",
         "dates": "May 2017",
         "description": "Developed a React single page application using GitHub API where users can compare GitHub user accounts as well as display popular repositories on GitHub.",
-        "technologies": ["JavaScript", "React", "Firebase", "NPM", "Webpack", "Babel", "Axios", "HTML", "CSS"],
+        "technologies": ["ES6", "React", "Firebase", "NPM", "Webpack", "Babel", "Axios", "HTML", "CSS"],
         "images": ["./images/github-battle.png"],
         "github": "https://github.com/tlabna/github-battle",
         "demo": "https://github-battle-ec28a.firebaseapp.com"
@@ -418,7 +436,7 @@ var projects = {
 
             // Caption Details
             $(".caption:last").append(formattedTitle);
-            $(".caption:last").append(formattedDates);
+            // Removing dates $(".caption:last").append(formattedDates);
 
             //Check if we technologies, then apply container and label for each technology
             if (currentProject.technologies.length > 0) {
