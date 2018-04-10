@@ -39,15 +39,16 @@ var HTMLworkLocation = '<span class="work-location"> - %data%</span>';
 var HTMLworkDescriptionStart = '<ul class="work-description"></ul>';
 var HTMLworkDescription = '<li>%data%</li>';
 
-var HTMLprojectStart = '<div class="project-entry col-md-4 equalize"></div>';
-var HTMLprojectThumbnail = '<div class="thumbnail"></div>';
-var HTMLprojectCaption = '<div class="caption text-center"></div>';
+var HTMLprojectStart = '<div class="project-entry thumbnail"></div>';
+// var HTMLprojectThumbnail = '<div class="thumbnail"></div>';
+var HTMLprojectCaption = '<div class="caption"></div>';
 var HTMLprojectTitle = '<h3>%data%</h3>';
 var HTMLprojectDates = '<div class="date-text">%data%</div>';
 var HTMLprojectDescription = '<h5>%data%</h5>';
 var HTMLprojectImage = '<img src="%data%">';
 var HTMLprojectTechnologies = '<h5 class="project-technologies"></h5>';
 var HTMLprojectTechnology = '<span class="label label-danger">%data%</span>';
+var HTMLprojectLinks = '<div class="project-links"></div>';
 var HTMLprojectDemo = "<a href='#' class='btn btn-info demo' role='button'>Demo</a>";
 var HTMLprojectGithub = "<a href='#' class='btn btn-info' role='button'>Github</a>";
 

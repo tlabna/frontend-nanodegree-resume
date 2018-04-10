@@ -414,8 +414,8 @@ var projects = {
 
         for (var project = 0; project < projects.projects.length; project++) {
 
-            $("#projects").append(HTMLprojectStart);
-            $(".project-entry:last").append(HTMLprojectThumbnail);
+            $(".projects").append(HTMLprojectStart);
+            // $(".project-entry:last").append(HTMLprojectThumbnail);
 
             var currentProject = projects.projects[project];
 
@@ -451,15 +451,18 @@ var projects = {
 
             $(".caption:last").append(formattedDescription);
 
-            // Check if github or demo links are available, if so append button to caption
+            // Project Links container
+            $(".thumbnail:last").append(HTMLprojectLinks)
+
+            // Check if github or demo links are available, if so append button to container
             if (currentProject.github !== "") {
                 var formattedGithub = HTMLprojectGithub.replace("#", currentProject.github);
-                $(".caption:last").append(formattedGithub);
+                $(".project-links:last").append(formattedGithub);
             }
 
             if (currentProject.demo !== "") {
                 var formattedDemo = HTMLprojectDemo.replace("#", currentProject.demo);
-                $(".caption:last").append(formattedDemo);
+                $(".project-links:last").append(formattedDemo);
             }
 
         }
