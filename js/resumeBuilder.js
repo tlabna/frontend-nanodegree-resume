@@ -22,7 +22,7 @@ var bio = {
         var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
         var formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
 
-        $("#header").prepend(formattedWelcomeMsg);
+        // $("#header").prepend(formattedWelcomeMsg);
         $("#header").prepend(formattedRole);
         $("#header").prepend(formattedLastName);
         $("#header").prepend(formattedFirstName);
