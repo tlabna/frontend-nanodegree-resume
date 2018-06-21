@@ -39,9 +39,9 @@ var bio = {
                 if (contact == 'mobile') {
                     // Removing number from site
                     //formattedMobile = HTMLmobile.replace("%data%", bio.contacts[contact]);
-                } /*else if (contact == 'email') {
-                    formattedEmail = HTMLemail.replace("%data%", bio.contacts[contact]);
-                }*/ else if (contact == 'github') {
+                } else if (contact == 'email') {
+                    // formattedEmail = HTMLemail.replace("%data%", bio.contacts[contact]);
+                } else if (contact == 'github') {
                     formattedGitHub = HTMLgithub.replace("%data%", bio.contacts[contact]);
                 } else if (contact == 'linkedin') {
                     formattedLinkedIn = HTMLlinkedin.replace("%data%", bio.contacts[contact]);
