@@ -379,7 +379,7 @@ var projects = {
         "technologies": ["JavaScript", "HTML", "CSS", "Knockout", "AJAX", "JavaScript frameworks"],
         "images": ["images/neighbourhood-map.png"],
         "github": "https://github.com/tlabna/neighbourhood-map",
-        "demo": ""
+        "demo": "https://tlabna.github.io/neighbourhood-map/dist/index.html"
     },
     {
         "title": "Item Catalog",
