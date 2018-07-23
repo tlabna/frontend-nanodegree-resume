@@ -45,7 +45,7 @@ var HTMLprojectCaption = '<div class="caption"></div>';
 var HTMLprojectTitle = '<h3>%data%</h3>';
 var HTMLprojectDates = '<div class="date-text">%data%</div>';
 var HTMLprojectDescription = '<h5>%data%</h5>';
-var HTMLprojectImage = '<img src="%data%">';
+var HTMLprojectImage = '<div class="project--image"><img src="%data%"></div>';
 var HTMLprojectTechnologies = '<h5 class="project-technologies"></h5>';
 var HTMLprojectTechnology = '<span class="label label-danger">%data%</span>';
 var HTMLprojectLinks = '<div class="project-links"></div>';
