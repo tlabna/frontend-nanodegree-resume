@@ -1,0 +1,22 @@
+{
+  "name": "online-resume",
+  "version": "1.0.0",
+  "description": "This is my online resume built with HTML, CSS, jQuery, JSON, Chart.js, and Bootstrap",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tlabna/online-resume.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tlabna/online-resume/issues"
+  },
+  "homepage": "https://github.com/tlabna/online-resume#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
+}
