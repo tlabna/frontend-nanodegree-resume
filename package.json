@@ -17,6 +17,31 @@
   },
   "homepage": "https://github.com/tlabna/online-resume#readme",
   "devDependencies": {
-    "gulp": "^3.9.1"
+    "autoprefixer": "^9.0.1",
+    "babel-eslint": "^8.2.6",
+    "browser-sync": "^2.24.6",
+    "cssnano": "^4.0.3",
+    "del": "^3.0.0",
+    "eslint": "^5.2.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-babel": "^5.1.0",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-node": "^7.0.1",
+    "eslint-plugin-prettier": "^2.6.2",
+    "eslint-plugin-promise": "^3.8.0",
+    "eslint-plugin-standard": "^3.1.0",
+    "gulp": "^3.9.1",
+    "gulp-cache": "^1.0.2",
+    "gulp-htmlmin": "^4.0.0",
+    "gulp-if": "^2.0.2",
+    "gulp-imagemin": "^4.1.0",
+    "gulp-postcss": "^7.0.1",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-uglify": "^3.0.0",
+    "prettier": "^1.13.7",
+    "pump": "^3.0.0",
+    "run-sequence": "^2.2.1",
+    "streamqueue": "^1.1.2"
   }
 }
