@@ -18,7 +18,9 @@
   "homepage": "https://github.com/tlabna/online-resume#readme",
   "devDependencies": {
     "autoprefixer": "^9.0.1",
+    "babel-core": "^6.26.3",
     "babel-eslint": "^8.2.6",
+    "babel-preset-env": "^1.7.0",
     "browser-sync": "^2.24.6",
     "cssnano": "^4.0.3",
     "del": "^3.0.0",
@@ -32,6 +34,7 @@
     "eslint-plugin-promise": "^3.8.0",
     "eslint-plugin-standard": "^3.1.0",
     "gulp": "^3.9.1",
+    "gulp-babel": "^7.0.1",
     "gulp-cache": "^1.0.2",
     "gulp-concat": "^2.6.1",
     "gulp-htmlmin": "^4.0.0",

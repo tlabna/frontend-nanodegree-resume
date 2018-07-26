@@ -13,6 +13,7 @@ const cache = require('gulp-cache')
 const del = require('del')
 const runSequence = require('run-sequence')
 const concat = require('gulp-concat')
+const babel = require('gulp-babel')
 // const gulpIf = require('gulp-if')
 // const rename = require('gulp-rename')
 
@@ -37,6 +38,7 @@ const paths = {
     ],
     jsRootDir: 'app/js',
     jsToBuild: 'app/js/resumeBuilder.js',
+    jsMin: 'app/js/*.min.js',
   },
   images: 'app/images/**/*.+(png|jpg|gif|svg)',
   fonts: 'app/fonts/**/*',
@@ -80,24 +82,31 @@ gulp.task('css', function() {
       .src(cssToBuild)
       .pipe(sourcemaps.init())
       .pipe(postcss(plugins))
-      .pipe(sourcemaps.write()),
-    gulp.src(cssMin),
-    gulp.concat('styles.css') // concat all css files together
+      .pipe(sourcemaps.write())
+      .pipe(concat('styles.css')),
+    gulp.src(cssMin)
   ).pipe(gulp.dest('css'))
 })
 
 // Build JS for prod
 gulp.task('js', function(cb) {
-  const { jsSourceFiles } = paths.js
-  pump(
+  const { jsToBuild, jsMin } = paths.js
+  const minBuild = pump(
     [
-      gulp.src(jsSourceFiles),
+      gulp.src(jsToBuild),
       sourcemaps.init(),
+      babel({
+        presets: ['env'],
+      }),
       uglify(),
       sourcemaps.write(),
-      gulp.dest('js'),
+      // gulp.dest('js'),
     ],
     cb
+  )
+
+  streamqueue({ objectMode: true }, minBuild, gulp.src(jsMin)).pipe(
+    gulp.dest('js')
   )
 })
 
