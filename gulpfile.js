@@ -4,7 +4,6 @@ const browserSync = require('browser-sync').create()
 const htmlmin = require('gulp-htmlmin')
 const uglify = require('gulp-uglify')
 const pump = require('pump')
-const gulpIf = require('gulp-if')
 const postcss = require('gulp-postcss')
 const cssnano = require('cssnano')
 const autoprefixer = require('autoprefixer')
@@ -13,13 +12,32 @@ const imagemin = require('gulp-imagemin')
 const cache = require('gulp-cache')
 const del = require('del')
 const runSequence = require('run-sequence')
+const concat = require('gulp-concat')
+// const gulpIf = require('gulp-if')
+// const rename = require('gulp-rename')
 
 // File paths
 const paths = {
   html: 'app/index.html',
-  css: ['app/css/*.css', '!app/css/*.min.css'],
-  cssMin: 'app/css/*.min.css',
-  js: 'app/js/*.js',
+  css: {
+    cssRootDir: 'app/css',
+    cssSourceFiles: [
+      'app/css/*.css',
+      '!app/css/*.min.css',
+      '!app/css/styles.css',
+    ],
+    cssToBuild: ['app/css/styles.css'],
+    cssMin: 'app/css/*.min.css',
+  },
+  js: {
+    jsSourceFiles: [
+      'app/js/*.js',
+      '!app/js/resumeBuilder.js',
+      '!app/js/*.min.js',
+    ],
+    jsRootDir: 'app/js',
+    jsToBuild: 'app/js/resumeBuilder.js',
+  },
   images: 'app/images/**/*.+(png|jpg|gif|svg)',
   fonts: 'app/fonts/**/*',
 }
@@ -54,25 +72,28 @@ gulp.task('css', function() {
     autoprefixer({ browsers: ['last 3 versions'] }),
     cssnano({ zindex: false }),
   ]
+  const { cssToBuild, cssMin } = paths.css
 
   return streamqueue(
     { objectMode: true },
     gulp
-      .src(paths.css)
+      .src(cssToBuild)
       .pipe(sourcemaps.init())
       .pipe(postcss(plugins))
       .pipe(sourcemaps.write()),
-    gulp.src(paths.cssMin)
+    gulp.src(cssMin),
+    gulp.concat('styles.css') // concat all css files together
   ).pipe(gulp.dest('css'))
 })
 
 // Build JS for prod
 gulp.task('js', function(cb) {
+  const { jsSourceFiles } = paths.js
   pump(
     [
-      gulp.src(paths.js),
+      gulp.src(jsSourceFiles),
       sourcemaps.init(),
-      gulpIf('!*.min.js', uglify()),
+      uglify(),
       sourcemaps.write(),
       gulp.dest('js'),
     ],
@@ -96,16 +117,52 @@ gulp.task('fonts', function() {
   return gulp.src(paths.fonts).pipe(gulp.dest('fonts'))
 })
 
+// Concat css files for dev
+gulp.task('concatCSS', () => {
+  const { cssSourceFiles, cssRootDir } = paths.css
+
+  return gulp
+    .src(cssSourceFiles)
+    .pipe(concat('styles.css'))
+    .pipe(gulp.dest(cssRootDir))
+})
+
+// Concat JS files for dev -> resumeBuilder.js
+gulp.task('concatJS', () => {
+  const { jsSourceFiles, jsRootDir } = paths.js
+
+  return gulp
+    .src(jsSourceFiles)
+    .pipe(concat('resumeBuilder.js'))
+    .pipe(gulp.dest(jsRootDir))
+})
+
 // Watch task for development with browser reload on change
-gulp.task('watch', ['browserSync'], function() {
+gulp.task('watch', ['concatCSS', 'concatJS', 'browserSync'], function() {
+  const { cssToBuild } = paths.css
   // Other watchers
   // Reloads the browser whenever HTML, CSS or JS files change
   // Reload on any changes in fonts or images
   gulp.watch('app/*.html', browserSync.reload)
-  gulp.watch('app/css/**/*.css', browserSync.reload)
-  gulp.watch('app/js/**/*.js', browserSync.reload)
+  gulp.watch(
+    ['app/css/**/*.css', `!${cssToBuild}`],
+    ['concatCSS', browserSync.reload]
+  )
+  gulp.watch('app/js/**/*.js', ['concatJS', browserSync.reload])
   gulp.watch('app/images/*', browserSync.reload)
   gulp.watch('app/fonts/*', browserSync.reload)
+})
+
+// Delete files created for dev build
+gulp.task('dev:clean', () => {
+  const cssFile = 'styles.css'
+  const jsFile = 'resumeBuilder.js'
+  const { cssRootDir } = paths.css
+  const { jsRootDir } = paths.js
+
+  console.log(`Deleteing files: ${jsFile} and ${cssFile}`)
+
+  return del([`${cssRootDir}/${cssFile}`, `${jsRootDir}/${jsFile}`])
 })
 
 // Build all files for prod
@@ -120,13 +177,17 @@ gulp.task('build:clean', function() {
   return del(['css/**', 'fonts/**', 'images/**', 'js/**', 'index.html'])
 })
 
+// Delete all files created for build (cache + dev too)
+gulp.task(
+  'build:cleanAll',
+  ['cache:clean', 'build:clean', 'dev:clean'],
+  function() {
+    console.log('Deleting build files and clearing cache')
+  }
+)
+
 // Clear images in cache
 gulp.task('cache:clean', function(callback) {
   console.log('Clearing cache')
   return cache.clearAll(callback)
-})
-
-// Delete all build files and cached
-gulp.task('clean', ['cache:clean', 'build:clean'], function() {
-  console.log('Deleting build files and clearing cache')
 })

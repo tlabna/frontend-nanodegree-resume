@@ -4,7 +4,7 @@
   "description": "This is my online resume built with HTML, CSS, jQuery, JSON, Chart.js, and Bootstrap",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "browser-sync start --server --files '**/*.css, **/*.html, **/*.js, !node_modules/**/*' --directory --port 7777 --browser 'Google Chrome Canary'"
   },
   "repository": {
     "type": "git",
@@ -33,10 +33,12 @@
     "eslint-plugin-standard": "^3.1.0",
     "gulp": "^3.9.1",
     "gulp-cache": "^1.0.2",
+    "gulp-concat": "^2.6.1",
     "gulp-htmlmin": "^4.0.0",
     "gulp-if": "^2.0.2",
     "gulp-imagemin": "^4.1.0",
     "gulp-postcss": "^7.0.1",
+    "gulp-rename": "^1.4.0",
     "gulp-sourcemaps": "^2.6.4",
     "gulp-uglify": "^3.0.0",
     "prettier": "^1.13.7",
