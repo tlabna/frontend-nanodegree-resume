@@ -18,8 +18,22 @@ body {
   margin: 0;
   min-height: 100vh;
   grid-template-rows: auto 1fr auto;
+  background: #efefef;
 }
 
 a {
   text-decoration: none;
+}
+
+.innerWrapper {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+/* Media queries */
+@media all and (max-width: 1320px) {
+  .innerWrapper {
+    padding-left: 2%;
+    padding-right: 2%;
+  }
 }

@@ -112,6 +112,110 @@ const bio = {
     $('.hero--bottom').append(HTMLsocials)
 
     /** End: Build Header HTML */
+
+    /** Start: Build Skills */
+    var data = [
+      {
+        value: 10,
+        color: '#F7464A',
+        highlight: '#FF5A5E',
+        label: bio.skills[0], // HTML
+        labelcolor: '#F7464A', // red
+      },
+      {
+        value: 9,
+        color: '#FFCC00',
+        highlight: '#FFEB99',
+        label: bio.skills[1], // CSS
+        labelcolor: '#FFCC00', // yellow
+      },
+      {
+        value: 8,
+        color: '#FF9933',
+        highlight: '#ffcc99',
+        label: bio.skills[2], // JS
+        labelcolor: '#FF9933', // orange
+      },
+      {
+        value: 8,
+        color: '#3399FF',
+        highlight: '#99CCFF',
+        label: bio.skills[3], // AJAX
+        labelcolor: '#3399FF', // light blue
+      },
+      {
+        value: 8,
+        color: '#33CC33',
+        highlight: '#ADEBAD',
+        label: bio.skills[4], // Python
+        labelcolor: '#33CC33', // green
+      },
+      {
+        value: 7,
+        color: '#FF66FF',
+        highlight: '#FF99FF',
+        label: bio.skills[5], // MySQL
+        labelcolor: '#FF66FF', // pink
+      },
+      {
+        value: 7,
+        color: '#999',
+        highlight: '#CCC',
+        label: bio.skills[6], // DJANGO
+        labelcolor: '#999', // grey
+      },
+      {
+        value: 6,
+        color: '#000',
+        highlight: '#404040',
+        label: bio.skills[7], // Knockout
+        labelcolor: '#000', // black
+      },
+      {
+        value: 5,
+        color: '#9999FF',
+        highlight: '#CCCCFF',
+        label: bio.skills[8], // Jasmin
+        labelcolor: '#9999FF', // light purple
+      },
+      {
+        value: 8,
+        color: '#2B3B8C',
+        highlight: '#7686D5',
+        label: bio.skills[9], // React
+        labelcolor: '#2B3B8C', // dark blue
+      },
+    ]
+
+    // Display skill labels
+    function skillsChartLabels() {
+      'use strict'
+
+      data.forEach((skill) => {
+        const skillLabel = skill.label
+        const skillHTML = `
+        <li class="skill" style="background-color: ${skill.labelcolor}">
+          ${skillLabel}
+        </li>
+        `
+
+        $('.skills--list').append(skillHTML)
+      })
+    }
+
+    window.onload = function() {
+      'use strict'
+
+      var ctx = document.getElementById('skills-chart').getContext('2d')
+      // eslint-disable-next-line
+      window.myPolarAreaChart = new Chart(ctx).PolarArea(data, {
+        responsive: false,
+      })
+      // Call skillsChartLabels function defined
+      skillsChartLabels()
+    }
+
+    /** End: Build Skills */
   },
 }
 
