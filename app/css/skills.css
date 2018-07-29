@@ -29,7 +29,7 @@
 
 .skills--list li {
   border-radius: 5px;
-  color: #fff;
+  color: var(--white);
   padding: 2%;
 }
 

@@ -35,7 +35,7 @@ const bio = {
       .split('')
       .map((letter) => {
         return `
-          <span class="first-name name">${letter}</span>
+          <span class="first-name">${letter}</span>
         `
       })
       .join('')
@@ -43,10 +43,7 @@ const bio = {
     const HTMLlastName = last
       .toUpperCase()
       .split('')
-      .map(
-        (letter) =>
-          `<span class="last-name name">${letter.toUpperCase()}</span>`
-      )
+      .map((letter) => `<span class="last-name">${letter}</span>`)
       .join('')
 
     const HTMLnameBanner = `
