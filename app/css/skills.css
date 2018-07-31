@@ -1,3 +1,7 @@
+.skills {
+  margin-top: 3%;
+}
+
 .skills .innerWrapper {
   display: grid;
   grid-gap: 20px;
