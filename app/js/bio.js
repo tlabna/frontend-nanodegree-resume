@@ -206,7 +206,8 @@ const bio = {
       var ctx = document.getElementById('skills-chart').getContext('2d')
       // eslint-disable-next-line
       window.myPolarAreaChart = new Chart(ctx).PolarArea(data, {
-        responsive: false,
+        responsive: true,
+        maintainAspectRatio: false,
       })
       // Call skillsChartLabels function defined
       skillsChartLabels()
