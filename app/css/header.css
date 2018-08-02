@@ -65,6 +65,7 @@
 
 .banner--full:before {
   height: 100%;
+  width: 102%;
   transform: translateY(0) rotate(-0.3deg);
   background-color: var(--black);
   background-image: none;
@@ -85,6 +86,10 @@
   width: 105%;
   transform: rotate(-1deg);
   background: var(--yellow);
+}
+
+.no--underline::after {
+  content: none;
 }
 
 .last-name {

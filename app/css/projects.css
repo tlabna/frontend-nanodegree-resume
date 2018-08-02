@@ -1,0 +1,88 @@
+.projects--section {
+  background: var(--yellow) url(../images/patterns/bank-note.svg);
+}
+
+.projects--section .innerWrapper {
+  display: grid;
+  grid-gap: 20px;
+  justify-content: center;
+  justify-items: center;
+}
+
+.projects--section h2 {
+  margin-top: 2%;
+}
+
+.projects {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.project--entry {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+.project--image {
+  height: 100%;
+}
+
+.project--image > img {
+  width: 100%;
+}
+
+.project--links {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.project--technologies {
+  text-align: center;
+}
+
+.project--technologies .label {
+  display: inline-block;
+  margin-right: 2px;
+  white-space: normal;
+  background-color: #d9534f;
+  padding: 0.2em 0.6em 0.3em;
+  font-size: 75%;
+  font-weight: 700;
+  line-height: 1;
+  color: #fff;
+  text-align: center;
+  vertical-align: baseline;
+}
+
+.caption {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2%;
+}
+
+.thumbnail {
+  padding: 4px;
+  margin-bottom: 20px;
+  line-height: 1.42857143;
+  background-color: var(--white);
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  transition: border 0.2s ease-in-out;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.075);
+}
+
+.project--button {
+  border-radius: 0;
+  margin-top: 5px;
+  color: var(--white);
+  background-color: #5bc0de;
+  border-color: #46b8da;
+}
+
+.demo {
+  margin-left: 5px;
+}
