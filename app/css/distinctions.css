@@ -1,0 +1,15 @@
+.distinctions--section .innerWrapper {
+  display: grid;
+  grid-gap: 20px;
+  justify-items: center;
+}
+
+.distinctions {
+  font-size: 1.4rem;
+  justify-self: left;
+}
+
+.distinctions-list {
+  margin: 0;
+  padding-left: 15px;
+}
