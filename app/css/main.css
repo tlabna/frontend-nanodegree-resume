@@ -71,6 +71,19 @@ a {
   border-radius: 4px;
 }
 
+.lang-dist-map__section > .innerWrapper {
+  display: grid;
+  grid-gap: 20px;
+}
+
+@media (min-width: 680px) {
+  .lang-dist-map__section > .innerWrapper {
+    grid-template-areas:
+      "lang map"
+      "dist map";
+  }
+}
+
 @media (min-width: 1300px) {
   .innerWrapper {
     max-width: 1300px;

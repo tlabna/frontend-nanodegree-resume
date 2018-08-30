@@ -1,6 +1,7 @@
-.map--section .innerWrapper {
+.map--section {
   display: grid;
   grid-gap: 20px;
+  grid-template-rows: auto 1fr;
   justify-items: center;
 }
 
@@ -16,4 +17,11 @@
 .map--container {
   height: 330px;
   width: 100%;
+}
+
+/* Change layout on devices larger than 768px */
+@media (min-width: 680px) {
+  .map--section {
+    grid-area: map;
+  }
 }

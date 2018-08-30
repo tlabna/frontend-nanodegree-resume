@@ -1,6 +1,7 @@
-.languages--section .innerWrapper {
+.languages--section {
   display: grid;
   grid-gap: 20px;
+  grid-template-rows: auto 1fr;
   justify-items: center;
 }
 
@@ -56,4 +57,11 @@
 .progress-level-1 {
   width: 60%;
   background-color: #f0ad4e;
+}
+
+/* Change layout on devices larger than 768px */
+@media (min-width: 680px) {
+  .languages--section {
+    grid-area: lang;
+  }
 }
