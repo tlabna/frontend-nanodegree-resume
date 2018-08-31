@@ -74,7 +74,7 @@
 
 .banner--full {
   letter-spacing: 0;
-  font-size: 5vw;
+  font-size: calc(2.6rem + (60 - 26) * ((100vw - 320px) / (1300 - 320)));
 }
 
 .banner--full::after {
@@ -99,7 +99,8 @@
 .role {
   margin: 0;
   text-align: right;
-  font-size: 3.5vw;
+  /* fluid font-size: https://css-tricks.com/books/volume-i/scale-typography-screen-size/ */
+  font-size: calc(10px + (24 - 10) * ((100vw - 320px) / (1300 - 320)));
   line-height: 1.3;
 }
 
@@ -144,7 +145,7 @@
   margin: 0 auto; /* Gives that scrolling effect as the typing happens */
   letter-spacing: 0.15em; /* Adjust as needed */
   animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
-  font-size: 2vmin;
+  font-size: calc(0.6rem + (16 - 6) * ((100vw - 320px) / (1300 - 320)));
   background-color: var(--black);
   color: var(--white);
   padding: 1%;
@@ -226,14 +227,14 @@
   }
 
   .banner--full {
-    font-size: 10rem;
+    font-size: 6rem;
   }
 
   .role {
-    font-size: 3rem;
+    font-size: 2.4rem;
   }
 
   .welcome--message p {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
 }
