@@ -16,7 +16,7 @@
 .projects {
   display: grid;
   grid-gap: 10px;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
 }
 
 .project--entry {
@@ -65,7 +65,7 @@
   margin-right: 2px;
   white-space: normal;
   background-color: #d9534f;
-  padding: 0.2em 0.6em 0.3em;
+  padding: 0.3em 0.6em;
   font-size: 75%;
   font-weight: 700;
   line-height: 1;
@@ -82,10 +82,13 @@
 
 .project--button {
   border-radius: 0;
-  margin-top: 5px;
+  margin-top: 1em;
   color: var(--white);
   background-color: #5bc0de;
   border-color: #46b8da;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 0.075rem;
 }
 
 .demo {
