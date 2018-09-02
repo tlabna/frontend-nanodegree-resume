@@ -17,6 +17,7 @@
 .map--container {
   height: 330px;
   width: 100%;
+  min-height: 100%;
 }
 
 /* Change layout on devices larger than 768px */

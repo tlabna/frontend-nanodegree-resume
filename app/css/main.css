@@ -87,6 +87,7 @@ a {
     grid-template-areas:
       "lang map"
       "dist map";
+    grid-template-columns: 45% 1fr;
   }
 }
 
