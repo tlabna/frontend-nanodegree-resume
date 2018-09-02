@@ -28,6 +28,7 @@ body {
   min-height: 100vh;
   grid-template-rows: auto 1fr auto;
   background: #efefef;
+  font-size: 1.6rem;
 }
 
 main {

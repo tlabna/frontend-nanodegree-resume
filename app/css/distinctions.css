@@ -6,13 +6,16 @@
 }
 
 .distinctions {
-  font-size: 1.4rem;
   justify-self: left;
 }
 
 .distinctions-list {
   margin: 0;
   padding-left: 15px;
+}
+
+.distinctions-list li {
+  margin-bottom: 0.4em;
 }
 
 /* Change layout on devices larger than 768px */

@@ -7,7 +7,6 @@
 
 .languages {
   width: 100%;
-  font-size: 1.4rem;
   font-weight: 400;
 }
 
@@ -25,7 +24,7 @@
   background-size: 40px 40px;
   width: 0;
   height: 100%;
-  font-size: 12px;
+  font-size: 0.8em;
   line-height: 20px;
   color: #fff;
   text-align: center;
