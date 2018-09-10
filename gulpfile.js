@@ -40,8 +40,7 @@ const paths = {
     jsToBuild: 'app/js/resumeBuilder.js',
     jsMin: 'app/js/*.min.js',
   },
-  images: 'app/images/**/*.+(png|jpg|gif|svg)',
-  fonts: 'app/fonts/**/*',
+  images: 'app/images/**/*.+(png|jpg|gif|svg|ico)',
 }
 
 // browserSync task
@@ -121,11 +120,6 @@ gulp.task('images', function() {
   )
 })
 
-// Copy fonts for prod
-gulp.task('fonts', function() {
-  return gulp.src(paths.fonts).pipe(gulp.dest('fonts'))
-})
-
 // Concat css files for dev
 gulp.task('concatCSS', () => {
   const { cssSourceFiles, cssRootDir } = paths.css
@@ -151,7 +145,7 @@ gulp.task('watch', ['concatCSS', 'concatJS', 'browserSync'], function() {
   const { cssToBuild } = paths.css
   // Other watchers
   // Reloads the browser whenever HTML, CSS or JS files change
-  // Reload on any changes in fonts or images
+  // Reload on any changes in images
   gulp.watch('app/*.html', browserSync.reload)
   gulp.watch(
     ['app/css/**/*.css', `!${cssToBuild}`],
@@ -159,7 +153,6 @@ gulp.task('watch', ['concatCSS', 'concatJS', 'browserSync'], function() {
   )
   gulp.watch('app/js/**/*.js', ['concatJS', browserSync.reload])
   gulp.watch('app/images/*', browserSync.reload)
-  gulp.watch('app/fonts/*', browserSync.reload)
 })
 
 // Delete files created for dev build
@@ -177,13 +170,13 @@ gulp.task('dev:clean', () => {
 // Build all files for prod
 gulp.task('build', function(callback) {
   console.log('Building files')
-  runSequence('build:clean', ['html', 'css', 'js', 'images', 'fonts'], callback)
+  runSequence('build:clean', ['html', 'css', 'js', 'images'], callback)
 })
 
 // Delete all build files
 gulp.task('build:clean', function() {
   console.log('Deleteing all build files')
-  return del(['css/**', 'fonts/**', 'images/**', 'js/**', 'index.html'])
+  return del(['css/**', 'images/**', 'js/**', 'index.html'])
 })
 
 // Delete all files created for build (cache + dev too)
