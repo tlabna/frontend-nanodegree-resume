@@ -1,5 +1,6 @@
 .hero {
   height: 95vh;
+  height: calc(var(--vh) * 95);
   background-image: url("../images/patterns/circuit-board.svg");
   background-color: var(--teal);
 }
@@ -225,6 +226,7 @@
 @media only screen and (min-device-width: 325px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
   .hero {
     height: 100vh;
+    height: calc(var(--vh) * 100);
   }
 }
 

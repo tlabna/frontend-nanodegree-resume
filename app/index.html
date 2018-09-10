@@ -119,6 +119,115 @@
   <script src="js/jquery-3.3.1.min.js"></script>
   <script src="js/Chart.min.js"></script>
   <script src="js/resumeBuilder.js"></script>
+  <script>
+    /**
+     * Checks if device browser is Chrome or Firefox
+     *
+     * @returns True if browser is Chrome or Firefox and False otherwise
+     */
+    function isChromeOrFirefox() {
+      /* ref:
+        - https://developer.chrome.com/multidevice/user-agent
+        - https://stackoverflow.com/questions/4565112/javascript-how-to-find-out-if-the-user-browser-is-chrome/13348618#13348618
+        - https://github.com/lancedikson/bowser/blob/master/src/parser-browsers.js
+      */
+      const winNav = window.navigator;
+      const isChrome = winNav.userAgent.match(/Chrome/i);
+      const isOpera = typeof window.opr !== "undefined";
+      const isIEedge = winNav.userAgent.indexOf("Edge") > -1;
+      const isIOSChrome = winNav.userAgent.match("CriOS");
+      const isFirefox = (winNav.userAgent.match(/Firefox|fxios/i));
+
+      if (isIOSChrome) {
+        // is Google Chrome on IOS
+        return true;
+      } else if (
+        isChrome &&
+        isOpera === false &&
+        isIEedge === false
+      ) {
+        // is Google Chrome
+        return true
+      } else if (isFirefox) {
+        // is Firefox
+        return true;
+      } else {
+        // not Google Chrome or Firefox
+        return false;
+      }
+
+    }
+
+    /**
+     * Checks if device is a handheld device (mobile/tablet)
+     *
+     * @returns True if device is mobile/tablet or screen size less than 1024 and false otherwise
+     */
+    function isHandheldDevice() {
+      /* ref:
+        - https://github.com/hammerjs/hammer.js/blob/master/hammer.js
+      */
+      // check userAgent if mobile or tablet
+      if (navigator.userAgent.match(/mobi|tablet|ip(ad|hone|od)|android/i)) {
+        return true;
+      }
+      // check screen size if above fails
+      if ('screen' in window && window.screen.width < 1024) {
+        return true;
+      }
+
+      return false;
+    }
+
+    /**
+     * Debounce function - Grouping a sudden burst of events into a single one
+     *
+     * @param {Function} func
+     * @param {number} [wait=20] wait time before next run (ms)
+     * @param {boolean} [immediate=true] run function immediately if not running
+     */
+    function debounce(func, wait = 20, immediate = true) {
+      var timeout;
+      return function () {
+        var context = this, args = arguments;
+        var later = function () {
+          timeout = null;
+          if (!immediate) func.apply(context, args);
+        };
+        var callNow = immediate && !timeout;
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+        if (callNow) func.apply(context, args);
+      };
+    }
+
+    /**
+     * Calculate viewport height and set --vh css variable to 1% of vh in px
+     *
+     */
+    function calcVH() {
+      // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
+      const vh = window.innerHeight * 0.01;
+
+      // Then we set the value in the --vh custom property to the root of the document
+      document.documentElement.style.setProperty('--vh', `${vh}px`);
+    }
+
+    // Check if we're on handheld device and chrome/firefox to apply fixed height
+    if (isHandheldDevice() && isChromeOrFirefox()) {
+      // calculate vh and fix height on initial page load
+      calcVH();
+
+      // Listen to screen orientation change and re-calculate viewport height
+      // add debounce fn to avoid triggering too many events
+      window.addEventListener('orientationchange', debounce(() => {
+        // Timeout is added because without it, calculating height was not consistent
+        setTimeout(() => {
+          calcVH();
+        }, 200);
+      }));
+    }
+  </script>
 </body>
 
 </html>
