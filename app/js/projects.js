@@ -258,5 +258,5 @@ function equalizeImageHeights() {
 }
 
 // equalizeImageHeights on page load and window resize
-$(document).ready(equalizeImageHeights)
+$(window).on('load', equalizeImageHeights)
 $(window).resize(equalizeImageHeights)
