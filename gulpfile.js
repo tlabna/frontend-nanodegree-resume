@@ -67,6 +67,24 @@ gulp.task('html', function() {
     .pipe(gulp.dest('.'))
 })
 
+// Build css for production w/o source map
+gulp.task('css', function() {
+  const plugins = [
+    autoprefixer({ browsers: ['last 3 versions'] }),
+    cssnano({ zindex: false }),
+  ]
+  const { cssToBuild, cssMin } = paths.css
+
+  return streamqueue(
+    { objectMode: true },
+    gulp
+      .src(cssToBuild)
+      .pipe(postcss(plugins))
+      .pipe(concat('styles.css')),
+    gulp.src(cssMin)
+  ).pipe(gulp.dest('css'))
+})
+
 // Build css for production w/ source map
 gulp.task('css:sourcemap', function() {
   const plugins = [
@@ -85,6 +103,25 @@ gulp.task('css:sourcemap', function() {
       .pipe(concat('styles.css')),
     gulp.src(cssMin)
   ).pipe(gulp.dest('css'))
+})
+
+// Build JS for production w/o source map
+gulp.task('js', function(cb) {
+  const { jsToBuild, jsMin } = paths.js
+  const minBuild = pump(
+    [
+      gulp.src(jsToBuild),
+      babel({
+        presets: ['env'],
+      }),
+      uglify(),
+    ],
+    cb
+  )
+
+  streamqueue({ objectMode: true }, minBuild, gulp.src(jsMin)).pipe(
+    gulp.dest('js')
+  )
 })
 
 // Build JS for production w/ source map
@@ -165,6 +202,17 @@ gulp.task('app:clean', () => {
   console.log(`Deleteing files: ${jsFile} and ${cssFile}`)
 
   return del([`${cssRootDir}/${cssFile}`, `${jsRootDir}/${jsFile}`])
+})
+
+// Build all files for production (w/o source maps)
+gulp.task('build', function(callback) {
+  console.log('Building files')
+  runSequence(
+    'build:clean',
+    ['concatCSS', 'concatJS'],
+    ['html', 'css', 'js', 'images'],
+    callback
+  )
 })
 
 // Build all files for production w/ source maps
