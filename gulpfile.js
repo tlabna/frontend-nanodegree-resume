@@ -67,8 +67,8 @@ gulp.task('html', function() {
     .pipe(gulp.dest('.'))
 })
 
-// Build css for prod
-gulp.task('css', function() {
+// Build css for production w/ source map
+gulp.task('css:sourcemap', function() {
   const plugins = [
     autoprefixer({ browsers: ['last 3 versions'] }),
     cssnano({ zindex: false }),
@@ -87,8 +87,8 @@ gulp.task('css', function() {
   ).pipe(gulp.dest('css'))
 })
 
-// Build JS for prod
-gulp.task('js', function(cb) {
+// Build JS for production w/ source map
+gulp.task('js:sourcemap', function(cb) {
   const { jsToBuild, jsMin } = paths.js
   const minBuild = pump(
     [
@@ -155,8 +155,8 @@ gulp.task('watch', ['concatCSS', 'concatJS', 'browserSync'], function() {
   gulp.watch('app/images/*', browserSync.reload)
 })
 
-// Delete files created for dev build
-gulp.task('dev:clean', () => {
+// Delete files created from watch or build tasks
+gulp.task('app:clean', () => {
   const cssFile = 'styles.css'
   const jsFile = 'resumeBuilder.js'
   const { cssRootDir } = paths.css
@@ -167,26 +167,27 @@ gulp.task('dev:clean', () => {
   return del([`${cssRootDir}/${cssFile}`, `${jsRootDir}/${jsFile}`])
 })
 
-// Build all files for prod
-gulp.task('build', function(callback) {
+// Build all files for production w/ source maps
+gulp.task('build:sourcemap', function(callback) {
   console.log('Building files')
-  runSequence('build:clean', ['html', 'css', 'js', 'images'], callback)
+  runSequence(
+    'build:clean',
+    ['concatCSS', 'concatJS'],
+    ['html', 'css:sourcemap', 'js:sourcemap', 'images'],
+    callback
+  )
 })
 
 // Delete all build files
-gulp.task('build:clean', function() {
+gulp.task('build:clean', ['app:clean'], function() {
   console.log('Deleteing all build files')
   return del(['css/**', 'images/**', 'js/**', 'index.html'])
 })
 
-// Delete all files created for build (cache + dev too)
-gulp.task(
-  'build:cleanAll',
-  ['cache:clean', 'build:clean', 'dev:clean'],
-  function() {
-    console.log('Deleting build files and clearing cache')
-  }
-)
+// Delete all files created from build (cache too)
+gulp.task('build:cleanAll', ['cache:clean', 'build:clean'], function() {
+  console.log('Deleting build files, generated app files and clearing cache')
+})
 
 // Clear images in cache
 gulp.task('cache:clean', function(callback) {
