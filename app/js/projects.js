@@ -152,7 +152,7 @@ const projects = {
         'Using jQuery, developed an interactive resume application that reads all data from a JSON file and then dynamically modifies the DOM to display the information. Further customized the project by personalizing the design using CSS.',
       technologies: ['HTML', 'CSS', 'JavaScript', 'JQuery'],
       images: ['images/online-resume2.png'],
-      github: 'https://github.com/tlabna/online-resume',
+      github: 'https://github.com/tlabna/online-resume/tree/v1',
       demo: '',
     },
   ],
