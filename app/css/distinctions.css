@@ -1,0 +1,26 @@
+.distinctions--section {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-rows: auto 1fr;
+  justify-items: center;
+}
+
+.distinctions {
+  justify-self: left;
+}
+
+.distinctions-list {
+  margin: 0;
+  padding-left: 15px;
+}
+
+.distinctions-list li {
+  margin-bottom: 0.4em;
+}
+
+/* Change layout on devices larger than 768px */
+@media (min-width: 680px) {
+  .distinctions--section {
+    grid-area: dist;
+  }
+}

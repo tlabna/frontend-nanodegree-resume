@@ -1,0 +1,28 @@
+.map--section {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-rows: auto 1fr;
+  justify-items: center;
+}
+
+/* Adjust banner pseudo-elements for long title */
+.map--section .banner--full:before {
+  width: 101%;
+}
+
+.map--section .banner--full:after {
+  width: 104%;
+}
+
+.map--container {
+  height: 330px;
+  width: 100%;
+  min-height: 100%;
+}
+
+/* Change layout on devices larger than 768px */
+@media (min-width: 680px) {
+  .map--section {
+    grid-area: map;
+  }
+}

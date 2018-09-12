@@ -1,0 +1,255 @@
+.hero {
+  height: 95vh;
+  height: calc(var(--vh) * 95);
+  background-image: url("../images/patterns/circuit-board.svg");
+  background-color: var(--teal);
+}
+
+.hero .innerWrapper {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-rows: 1fr 1fr;
+  align-items: end;
+  justify-items: center;
+  height: 100%;
+}
+
+.hero--top {
+  display: flex;
+  flex-direction: column;
+  margin-right: 2%;
+}
+
+.banner:before {
+  content: "";
+  position: absolute;
+  height: 35%;
+  transform: translateY(90%) rotate(-0.3deg);
+  width: 101%;
+  top: 4%;
+  background-image: linear-gradient(
+    to right,
+    var(--black) 49%,
+    var(--yellow) 51%
+  );
+  z-index: -1;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+.banner {
+  color: var(--white);
+  letter-spacing: -0.25em;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.15);
+  position: relative;
+  z-index: 2;
+  display: inline-block;
+}
+
+.banner > span {
+  letter-spacing: normal;
+  transition: all 0.2s;
+  display: inline-block;
+  font-weight: 300;
+}
+
+.banner > span:hover {
+  transform: scale(1.1) rotate(1deg);
+  cursor: cell;
+}
+
+/* Fix spacing for letter T */
+.banner > span:first-child {
+  letter-spacing: -0.1em;
+}
+
+.banner--large {
+  /* min 46px - max 140px */
+  font-size: calc(4.6rem + (140 - 46) * ((100vw - 320px) / (1300 - 320)));
+  transition: font-size 0.2s;
+}
+
+.banner--full:before {
+  height: 100%;
+  width: 102%;
+  transform: translateY(0) rotate(-0.3deg);
+  background-color: var(--black);
+  background-image: none;
+  top: 0;
+}
+
+.banner--full {
+  letter-spacing: 0;
+  font-size: calc(2.6rem + (60 - 26) * ((100vw - 320px) / (1300 - 320)));
+}
+
+.banner--full::after {
+  content: "";
+  position: absolute;
+  bottom: -6%;
+  left: -2%;
+  height: 10%;
+  width: 105%;
+  transform: rotate(-1deg);
+  background: var(--yellow);
+}
+
+.no--underline::after {
+  content: none;
+}
+
+.last-name {
+  color: var(--black);
+}
+
+.role {
+  margin: 0;
+  text-align: right;
+  /* fluid font-size: https://css-tricks.com/books/volume-i/scale-typography-screen-size/ */
+  font-size: calc(10px + (24 - 10) * ((100vw - 320px) / (1300 - 320)));
+  line-height: 1.3;
+}
+
+.role mark {
+  color: var(--greyblack);
+  position: relative;
+  text-shadow: rgba(0, 0, 0, 0.2) 1px 1px 0px;
+  white-space: nowrap;
+  background: none;
+}
+
+.role mark:after {
+  display: inline-block;
+  position: absolute;
+  bottom: -30%;
+  left: 0;
+  height: 20%;
+  width: 105%;
+  margin-left: -1.5%;
+  transform: rotate(-1deg);
+  content: "";
+  background: var(--yellow);
+}
+
+.hero--bottom {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100%;
+  align-items: center;
+}
+
+.welcome--message {
+  margin-bottom: 8%;
+}
+
+.welcome--message p {
+  /* Typing effect */
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: 0.15em solid var(--yellow); /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: 0.1em; /* Adjust as needed */
+  animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+  font-size: calc(0.7rem + (16 - 7) * ((100vw - 320px) / (1300 - 320)));
+  background-color: var(--black);
+  color: var(--white);
+  padding: 1%;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: var(--yellow);
+  }
+}
+
+.socials:before {
+  background: var(--black);
+  display: block;
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -8%;
+  width: 100%;
+  height: 120%;
+  z-index: -1;
+}
+.socials {
+  position: relative;
+  z-index: 1;
+  width: 40%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.socials:after {
+  background: var(--yellow);
+  display: block;
+  content: "";
+  position: absolute;
+  left: -1%;
+  top: -8%;
+  width: 102%;
+  height: 120%;
+  transform: rotate(2deg);
+  z-index: -1;
+}
+
+.socials a {
+  width: 20%;
+  margin: 0 6%;
+  color: var(--greyblack);
+}
+
+/* Media Queries */
+
+/* iphone 4 -> 8 */
+@media only screen and (min-device-width: 325px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+  .hero {
+    height: 100vh;
+    height: calc(var(--vh) * 100);
+  }
+}
+
+@media all and (min-width: 1300px) {
+  .banner--large {
+    font-size: 14rem;
+  }
+
+  .banner--full {
+    font-size: 6rem;
+  }
+
+  .role {
+    font-size: 2.4rem;
+  }
+
+  .welcome--message p {
+    font-size: 1.6rem;
+  }
+}
+
+@media (min-width: 1600px) {
+  .hero {
+    height: 45vh;
+  }
+}

@@ -1,0 +1,116 @@
+footer {
+  padding-top: 2em;
+}
+
+/* Direct children of footer */
+footer > * {
+  padding-top: 1em;
+}
+
+footer p {
+  line-height: 1.5;
+}
+
+.footer--about {
+  background-color: var(--white);
+}
+
+.footer--about p {
+  letter-spacing: 0.025rem;
+  font-weight: 300;
+  margin: 0.7em 0;
+}
+
+.about {
+  display: flex;
+  flex-direction: column;
+  padding: 0 0.25em;
+}
+
+.about h3 {
+  margin: 0 0 0.4em 0;
+  text-align: center;
+}
+
+.about h6 {
+  margin: 0.5em 0;
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+hr.vertical {
+  display: none;
+}
+
+.footer--end {
+  background-color: var(--footer-bg-colour);
+  color: var(--white);
+}
+
+.footer--end > .innerWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer--end p {
+  text-align: center;
+}
+
+.footer--socials {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.footer--socials > a {
+  width: 1.5em;
+  color: var(--white);
+}
+
+.footer--socials > a:first-child {
+  margin-right: 0.6em;
+}
+
+.footer--socials > a:hover {
+  color: var(--yellow);
+}
+
+.footer--shoutout-link {
+  color: var(--white);
+  text-decoration: underline;
+}
+
+@media (min-width: 667px) {
+  .about {
+    display: grid;
+    grid-template-areas:
+      "about--1 hr about--2"
+      "about--1 hr about--2";
+    align-items: center;
+  }
+
+  .about--1 {
+    grid-area: about--1;
+  }
+
+  hr.vertical {
+    grid-area: hr;
+    display: block;
+    height: 50%;
+    margin: 1em;
+  }
+
+  .about--2 {
+    grid-area: about--2;
+  }
+
+  .about h3,
+  .about h6 {
+    text-align: left;
+  }
+
+  .about h6:first-child {
+    margin-top: 0;
+  }
+}
