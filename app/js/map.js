@@ -12,6 +12,7 @@ let lastInfoWindowOpened
  * Initializes and creates Google Map with markers of known locations
  *
  */
+// eslint-disable-next-line
 function initializeMap() {
   const mapOptions = {
     disableDefaultUI: true,
@@ -109,8 +110,6 @@ function initializeMap() {
   // the places array
   pinPoster(places)
 }
-
-window.addEventListener('load', initializeMap)
 
 // Listen for resizing of the window and adjust map bounds
 window.addEventListener('resize', function(e) {
