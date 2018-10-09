@@ -10,8 +10,6 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
 
-  <!-- Google Maps API -->
-  <script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyCNVql4BDc9FUGDLwN3HjjcZ0zz2SS9-sY"></script>
 </head>
 
 <body>
@@ -118,6 +116,9 @@
   <script src="js/jquery-3.3.1.min.js"></script>
   <script src="js/Chart.min.js"></script>
   <script src="js/resumeBuilder.js"></script>
+  <!-- Google Maps API -->
+  <!-- With callback to call InitializeMap() immediately once script has been fetched -->
+  <script async defer src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyCNVql4BDc9FUGDLwN3HjjcZ0zz2SS9-sY&callback=initializeMap"></script>
   <script>
     /**
      * Checks if device browser is Chrome or Firefox
