@@ -248,8 +248,8 @@
   }
 }
 
-@media (min-width: 1600px) {
+@media (min-width: 2001px) {
   .hero {
-    height: 45vh;
+    height: 65vh;
   }
 }
